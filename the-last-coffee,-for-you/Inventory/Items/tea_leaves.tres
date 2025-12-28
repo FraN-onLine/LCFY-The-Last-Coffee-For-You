@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Inventory_Item" load_steps=4 format=3 uid="uid://5u7inoxq2wab"]
+
+[ext_resource type="Script" uid="uid://dogun6iu7q75j" path="res://Inventory/item.gd" id="1_ukyvr"]
+[ext_resource type="Texture2D" uid="uid://c7jrnqr4fbspb" path="res://Assets/Items/FoodItems.png" id="2_qk44d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w3p0"]
+atlas = ExtResource("2_qk44d")
+region = Rect2(64, 64, 32, 32)
+
+[resource]
+script = ExtResource("1_ukyvr")
+name = "Tea Leaves"
+texture = SubResource("AtlasTexture_8w3p0")
+usable = true
+description = "default"
+giftable = false
+craftable = false
+recipe = Array[ExtResource("1_ukyvr")]([])
+metadata/_custom_type_script = "uid://dogun6iu7q75j"

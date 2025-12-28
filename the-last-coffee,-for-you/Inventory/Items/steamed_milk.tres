@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Inventory_Item" load_steps=4 format=3 uid="uid://dlqbp7pvejikx"]
+
+[ext_resource type="Script" uid="uid://dogun6iu7q75j" path="res://Inventory/item.gd" id="1_pgbhg"]
+[ext_resource type="Texture2D" uid="uid://c7jrnqr4fbspb" path="res://Assets/Items/FoodItems.png" id="2_xu3ba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12w2r"]
+atlas = ExtResource("2_xu3ba")
+region = Rect2(128, 0, 32, 32)
+
+[resource]
+script = ExtResource("1_pgbhg")
+name = "Steamed Milk"
+texture = SubResource("AtlasTexture_12w2r")
+usable = false
+description = "default"
+giftable = false
+craftable = false
+recipe = Array[ExtResource("1_pgbhg")]([])
+metadata/_custom_type_script = "uid://dogun6iu7q75j"

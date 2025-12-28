@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=6 format=3 uid="uid://bgv46ilneeg0n"]
+
+[ext_resource type="Resource" uid="uid://d2ikwkkysgk6b" path="res://Dialog/Aileen1.dialogue" id="1_rs6ud"]
+[ext_resource type="Script" uid="uid://dogun6iu7q75j" path="res://Inventory/item.gd" id="1_ucr2a"]
+[ext_resource type="Resource" uid="uid://ccjbgxymcdjdm" path="res://Inventory/Items/tea.tres" id="2_esu71"]
+[ext_resource type="Script" uid="uid://dg2ripjj1hjke" path="res://Characters/npcdata.gd" id="2_gac0w"]
+[ext_resource type="Resource" uid="uid://cmoncs7y1sphp" path="res://Inventory/Items/parfait.tres" id="3_rs6ud"]
+
+[resource]
+script = ExtResource("2_gac0w")
+name = "Aileen"
+friendship = 0
+schedule = {}
+dialogues = Dictionary[int, String]({})
+animations = {}
+loved_items = Array[ExtResource("1_ucr2a")]([ExtResource("3_rs6ud")])
+hated_items = Array[ExtResource("1_ucr2a")]([ExtResource("2_esu71"), null, null])
+dialogue_path = ExtResource("1_rs6ud")
+metadata/_custom_type_script = "uid://dg2ripjj1hjke"

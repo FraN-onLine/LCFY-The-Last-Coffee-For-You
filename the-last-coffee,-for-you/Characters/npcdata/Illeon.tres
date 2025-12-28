@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="NPCData" load_steps=3 format=3 uid="uid://ct6f0mael8bok"]
+
+[ext_resource type="Script" uid="uid://dogun6iu7q75j" path="res://Inventory/item.gd" id="1_7vg4w"]
+[ext_resource type="Script" uid="uid://dg2ripjj1hjke" path="res://Characters/npcdata.gd" id="1_epnik"]
+
+[resource]
+script = ExtResource("1_epnik")
+name = "Illeon"
+friendship = 700
+schedule = {
+1: [Vector2(0, 0), Vector2(0, -100), Vector2(-100, -100)]
+}
+dialogues = Dictionary[int, String]({
+1: "Hello",
+2: "Bitch you suck"
+})
+animations = {}
+loved_items = Array[ExtResource("1_7vg4w")]([])
+hated_items = Array[ExtResource("1_7vg4w")]([])
+metadata/_custom_type_script = "uid://dg2ripjj1hjke"

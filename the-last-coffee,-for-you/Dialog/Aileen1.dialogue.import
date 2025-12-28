@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d2ikwkkysgk6b"
+path="res://.godot/imported/Aileen1.dialogue-e13f4ba6d6bc09a8af1d16bfb9c6b156.tres"
+
+[deps]
+
+source_file="res://Dialog/Aileen1.dialogue"
+dest_files=["res://.godot/imported/Aileen1.dialogue-e13f4ba6d6bc09a8af1d16bfb9c6b156.tres"]
+
+[params]
+
+defaults=true

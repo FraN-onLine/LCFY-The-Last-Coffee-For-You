@@ -1,0 +1,142 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmu7erjuvgh8f"]
+
+[ext_resource type="Script" uid="uid://5qg027a2eoee" path="res://UI/container_ui.gd" id="1_3nlay"]
+[ext_resource type="Texture2D" uid="uid://b2vdel75ickrb" path="res://Assets/UI/Inventory.png" id="2_st0lc"]
+[ext_resource type="PackedScene" uid="uid://c253bntq5g4gy" path="res://UI/inventory_slot.tscn" id="3_odf68"]
+[ext_resource type="PackedScene" uid="uid://b1w8k8ficafnd" path="res://Interactables/pop_up_text.tscn" id="4_wax3n"]
+[ext_resource type="Texture2D" uid="uid://clqoeksda7i0f" path="res://Assets/UI/BrewMenu-Sheet.png" id="5_st0lc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odf68"]
+atlas = ExtResource("5_st0lc")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wax3n"]
+atlas = ExtResource("5_st0lc")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_goyi4"]
+animations = [{
+"frames": [{
+"duration": 2.2,
+"texture": SubResource("AtlasTexture_odf68")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_wax3n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="container" type="Control" groups=["container_ui"]]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3nlay")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 340.0
+offset_top = 112.0
+offset_right = -331.0
+offset_bottom = -214.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_st0lc")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.009
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 9.102
+offset_right = -58.0
+offset_bottom = -49.0
+theme_override_constants/h_separation = 125
+theme_override_constants/v_separation = 100
+columns = 4
+
+[node name="Inventory_slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Inventory_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_odf68")]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PopUpText" parent="." instance=ExtResource("4_wax3n")]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 318)
+scale = Vector2(6.44792, 6.09375)
+sprite_frames = SubResource("SpriteFrames_goyi4")
+autoplay = "default"
+frame_progress = 0.248919

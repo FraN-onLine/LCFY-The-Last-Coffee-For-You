@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Inventory_Item" load_steps=4 format=3 uid="uid://fgp8dfuypcmu"]
+
+[ext_resource type="Script" uid="uid://dogun6iu7q75j" path="res://Inventory/item.gd" id="1_am7jg"]
+[ext_resource type="Texture2D" uid="uid://c7jrnqr4fbspb" path="res://Assets/Items/FoodItems.png" id="2_juupl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kanh"]
+atlas = ExtResource("2_juupl")
+region = Rect2(32, 32, 32, 32)
+
+[resource]
+script = ExtResource("1_am7jg")
+name = "Affogato"
+texture = SubResource("AtlasTexture_5kanh")
+usable = false
+description = "Icecream Topped Espresso"
+giftable = false
+craftable = false
+recipe = Array[ExtResource("1_am7jg")]([])
+metadata/_custom_type_script = "uid://dogun6iu7q75j"

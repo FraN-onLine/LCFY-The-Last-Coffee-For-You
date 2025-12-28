@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhpwlqf2jnmj7"]
+
+[ext_resource type="PackedScene" uid="uid://0kd28rxcvfq1" path="res://UI/inventory_ui.tscn" id="2_e707p"]
+[ext_resource type="PackedScene" uid="uid://b3d7soxd46ki" path="res://UI/time_ui.tscn" id="3_f1fl4"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Inventory_UI" parent="." instance=ExtResource("2_e707p")]
+anchors_preset = -1
+anchor_right = 0.072
+offset_right = -82.944
+grow_horizontal = 1
+size_flags_vertical = 3
+
+[node name="TimeUI" parent="." instance=ExtResource("3_f1fl4")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1151.0
+offset_right = -1151.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
