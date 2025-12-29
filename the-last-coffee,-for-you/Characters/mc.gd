@@ -26,7 +26,7 @@ var animation := "idle"
 # ----------------------------
 func _ready():
 	add_child(mover)
-	mover.move_speed = 3.0
+	mover.move_speed = 4.0
 	mover.move_repeat_delay = 0.0
 	global_position = mover.setup(global_position)
 
