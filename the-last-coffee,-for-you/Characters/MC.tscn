@@ -402,13 +402,13 @@ inv = ExtResource("2_63cag")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
-position = Vector2(0, 1)
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_nlhd7")
-animation = &"walk-up"
-frame_progress = 0.510548
+animation = &"idle-down"
+frame_progress = 0.0183879
 
 [node name="PlayerCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_ib2cn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -416,6 +416,6 @@ zoom = Vector2(3, 3)
 
 [node name="HeldItemSprite" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(1, -28)
+position = Vector2(0, -40)
 scale = Vector2(0.34375, 0.283541)
 texture = ExtResource("4_csp5j")

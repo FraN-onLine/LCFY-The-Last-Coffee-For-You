@@ -52,3 +52,8 @@ func world_to_tile(pos: Vector2) -> Vector2i:
 func tile_to_world(tile: Vector2i) -> Vector2:
 	return Vector2(tile.x * tile_size + tile_size / 2,
 				   tile.y * tile_size + tile_size / 2)
+
+func snap_owner_to_grid(owner: Node2D):
+	current_tile = world_to_tile(owner.global_position)
+	owner.global_position = tile_to_world(current_tile)
+	is_moving = false
