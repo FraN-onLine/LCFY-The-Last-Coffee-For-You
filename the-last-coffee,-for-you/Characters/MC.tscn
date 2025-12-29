@@ -1,6 +1,6 @@
-[gd_scene load_steps=48 format=3 uid="uid://8437no1d02s6"]
+[gd_scene load_steps=47 format=3 uid="uid://8437no1d02s6"]
 
-[ext_resource type="Script" uid="uid://caokpoqj7nvt3" path="res://Character Scripts/mc.gd" id="1_5bpqy"]
+[ext_resource type="Script" uid="uid://caokpoqj7nvt3" path="res://Characters/mc.gd" id="1_5bpqy"]
 [ext_resource type="Resource" uid="uid://bh5281gv44is3" path="res://Inventory/playerinventory.tres" id="2_63cag"]
 [ext_resource type="Texture2D" uid="uid://b2vdel75ickrb" path="res://Assets/UI/Inventory.png" id="4_csp5j"]
 [ext_resource type="Texture2D" uid="uid://d2o0tttn5grr0" path="res://Assets/Characters/MC/MC-Sheet.png" id="4_ib2cn"]
@@ -395,9 +395,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ib2cn"]
 size = Vector2(10, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_csp5j"]
-size = Vector2(22.1538, 13.1667)
-
 [node name="MC" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_5bpqy")
 inv = ExtResource("2_63cag")
@@ -422,8 +419,3 @@ z_index = 1
 position = Vector2(-0.5, -11.4633)
 scale = Vector2(0.34375, 0.283541)
 texture = ExtResource("4_csp5j")
-
-[node name="ItemCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(0.40625, 0.375)
-shape = SubResource("RectangleShape2D_csp5j")
