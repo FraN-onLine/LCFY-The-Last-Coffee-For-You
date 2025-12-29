@@ -416,6 +416,6 @@ zoom = Vector2(3, 3)
 
 [node name="HeldItemSprite" type="Sprite2D" parent="."]
 z_index = 1
-position = Vector2(0, -19)
+position = Vector2(1, -28)
 scale = Vector2(0.34375, 0.283541)
 texture = ExtResource("4_csp5j")
