@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://Global/global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+TileOccupancy="*res://Global/TileOccupancy.gd"
 
 [dialogue_manager]
 

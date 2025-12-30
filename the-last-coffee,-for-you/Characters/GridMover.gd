@@ -22,19 +22,24 @@ func update(delta, owner: CharacterBody2D):
 
 	move_timer -= delta
 
-func try_move(dir: Vector2i, owner: CharacterBody2D, can_move_cb: Callable):
-	if is_moving or move_timer > 0:
+func try_move(dir: Vector2i, owner: CharacterBody2D, can_move_cb: Callable, location: String) -> bool:
+	var next_tile := current_tile + dir
+
+	if TileOccupancy.is_occupied(location, next_tile):
 		return false
 
-	var next_tile := current_tile + dir
 	if not can_move_cb.call(next_tile):
 		return false
+
+	TileOccupancy.vacate(location, current_tile)
+	TileOccupancy.occupy(location, next_tile, owner)
 
 	current_tile = next_tile
 	target_world_pos = tile_to_world(current_tile)
 	is_moving = true
 	move_timer = move_repeat_delay
 	return true
+
 
 func move_towards_target(delta, owner: CharacterBody2D):
 	var step = move_speed * tile_size * delta

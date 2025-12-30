@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://fgp8dfuypcmu" path="res://Inventory/Items/affogato.tres" id="12_lntxb"]
 [ext_resource type="Resource" uid="uid://ccjbgxymcdjdm" path="res://Inventory/Items/tea.tres" id="14_5cjpy"]
 [ext_resource type="Resource" uid="uid://xjjsptpgpb5a" path="res://Inventory/Items/foamed_milk.tres" id="15_4pbpl"]
-[ext_resource type="PackedScene" uid="uid://c52fihihm67w1" path="res://Characters/npc.tscn" id="19_hqxqd"]
+[ext_resource type="PackedScene" uid="uid://c52fihihm67w1" path="res://Characters/Aileen.tscn" id="19_hqxqd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vk3rj"]
 texture = ExtResource("2_4pbpl")

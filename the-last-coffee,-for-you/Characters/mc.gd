@@ -20,6 +20,7 @@ extends CharacterBody2D
 var paused := false
 var direction := "-down"
 var animation := "idle"
+var current_location = "room"
 
 # ----------------------------
 # READY
@@ -29,6 +30,8 @@ func _ready():
 	mover.move_speed = 4.0
 	mover.move_repeat_delay = 0.0
 	global_position = mover.setup(global_position)
+	TileOccupancy.occupy(current_location, mover.current_tile, self)
+
 
 # ----------------------------
 # PROCESS
@@ -49,7 +52,7 @@ func _physics_process(delta):
 		direction = dir_to_anim(dir)
 
 		# Try to move; if blocked, we still turn in place
-		mover.try_move(dir, self, can_move_to_tile)
+		mover.try_move(dir, self, can_move_to_tile, current_location)
 		update_animation(dir)
 	else:
 		update_animation(dir)
