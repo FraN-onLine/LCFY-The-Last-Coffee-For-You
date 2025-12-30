@@ -63,7 +63,8 @@ func _ready() -> void:
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
 	add_child(mutation_cooldown)
 
-#func change_portrait():
+func change_portrait(portrait: Texture2D):
+	$CharacterPortrait.texture = portrait
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing

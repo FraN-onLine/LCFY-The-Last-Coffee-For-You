@@ -65,7 +65,7 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
-[node name="ExampleBalloon" type="CanvasLayer"]
+[node name="ExampleBalloon" type="CanvasLayer" groups=["dialogue_balloon"]]
 layer = 100
 script = ExtResource("1_36de5")
 
@@ -191,7 +191,7 @@ size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Dialogue..."
 
-[node name="Framed-portraits-aileen-sheet" type="Sprite2D" parent="."]
+[node name="CharacterPortrait" type="Sprite2D" parent="."]
 position = Vector2(1025, 532)
 scale = Vector2(2.42846, 2.25658)
 texture = ExtResource("5_80h8d")

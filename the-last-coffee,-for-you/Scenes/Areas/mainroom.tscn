@@ -472,14 +472,14 @@ container_inventory = SubResource("Resource_5cjpy")
 
 [node name="NPC" parent="." instance=ExtResource("19_hqxqd")]
 z_index = 1
-position = Vector2(90, -154)
+position = Vector2(90, -137)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -5
-offset_left = -769.0
-offset_top = -710.0
-offset_right = 1283.0
-offset_bottom = 640.0
+offset_left = -776.0
+offset_top = -708.0
+offset_right = 1276.0
+offset_bottom = 642.0
 color = Color(0.0140528, 0.0113063, 0.111716, 1)
 
 [editable path="Interactables/Interactable"]

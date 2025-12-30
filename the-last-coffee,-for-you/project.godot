@@ -45,6 +45,7 @@ player=""
 inventory_ui=""
 container_ui=""
 collision_tilemap=""
+dialogue_balloon=""
 
 [input]
 

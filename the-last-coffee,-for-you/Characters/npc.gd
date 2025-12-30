@@ -74,24 +74,30 @@ func interact_with_npc():
 		if s.item:
 			var item = s.item
 			var reaction_key = "neutral"
+			var reaction_portrait = normal_portrait
 			if npc_data.loved_items.has(item):
+				reaction_portrait = joyous_portrait
 				reaction_key = "liked"
 				liked_giftcount += 1
 				if liked_giftcount == 3:
 					reaction_key = "liked_gifted_thrice"
 			elif npc_data.hated_items.has(item):
+				reaction_portrait = worried_portrait
 				reaction_key = "hated"
 			# Remove the item from the inventory
 			inv.remove_one_from_slot(slot_index)
 			inv_ui.update_slots()
 			# Show reaction dialogue using Dialogue Manager
 			DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, reaction_key)
+			get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(reaction_portrait)
+			get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(worried_portrait)
 			Global.is_paused = true
 			gifted_today = true
 			return
 	if interacted_today == false:
 		var day = "day" + str(Global.current_day)
 		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, day)
+		get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
 		met = true
 		Global.is_paused = true
 		interacted_today = true
