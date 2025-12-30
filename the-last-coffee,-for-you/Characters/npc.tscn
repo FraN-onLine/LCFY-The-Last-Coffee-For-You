@@ -208,7 +208,6 @@ size = Vector2(42, 43)
 [node name="NPC" type="CharacterBody2D"]
 script = ExtResource("1_64dcp")
 npc_data = ExtResource("2_6ybb6")
-speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ws6e5")

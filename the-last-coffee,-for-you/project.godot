@@ -44,6 +44,7 @@ folder_colors={
 player=""
 inventory_ui=""
 container_ui=""
+collision_tilemap=""
 
 [input]
 

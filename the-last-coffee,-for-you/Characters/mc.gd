@@ -3,7 +3,7 @@ extends CharacterBody2D
 # ----------------------------
 # MOVEMENT
 # ----------------------------
-@export var collision_tilemap: TileMapLayer
+@onready var collision_tilemap: = get_tree().get_first_node_in_group("collision_tilemap")
 
 @onready var mover: GridMover = GridMover.new()
 
@@ -41,7 +41,7 @@ func _physics_process(delta):
 	mover.update(delta, self)
 
 	if mover.is_moving:
-		update_animation()
+		update_animation(null)
 		return
 
 	var dir := get_input_direction()
@@ -50,9 +50,9 @@ func _physics_process(delta):
 
 		# Try to move; if blocked, we still turn in place
 		mover.try_move(dir, self, can_move_to_tile)
-		update_animation()
+		update_animation(dir)
 	else:
-		update_animation()
+		update_animation(dir)
 
 # ----------------------------
 # INPUT
@@ -87,13 +87,13 @@ func can_move_to_tile(tile: Vector2i) -> bool:
 	if data == null:
 		return true
 
-	return not data.get_custom_data("blocked")
+	return not data.get_custom_data("Blocked")
 
 # ----------------------------
 # ANIMATION
 # ----------------------------
-func update_animation():
-	animation = "walk" if mover.is_moving else "idle"
+func update_animation(dir):
+	animation = "walk" if (mover.is_moving or dir != Vector2i.ZERO) else "idle"
 	animation += direction
 
 	var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
