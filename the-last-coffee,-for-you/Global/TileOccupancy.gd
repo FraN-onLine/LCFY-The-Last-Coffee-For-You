@@ -14,6 +14,13 @@ func occupy(location: String, tile: Vector2i, who: Node):
 		occupied_tiles[location] = {}
 	occupied_tiles[location][tile] = who
 
+func get_occupant(location: String, tile: Vector2i) -> Node:
+	if not occupied_tiles.has(location):
+		return null
+	if occupied_tiles[location].has(tile):
+		return occupied_tiles[location][tile]
+	return null
+
 func vacate(location: String, tile: Vector2i):
 	if occupied_tiles.has(location):
 		occupied_tiles[location].erase(tile)

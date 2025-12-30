@@ -71,6 +71,34 @@ func get_input_direction() -> Vector2i:
 		return Vector2i.RIGHT
 	return Vector2i.ZERO
 
+func _input(event):
+	if Global.is_paused:
+		return
+
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		handle_tile_tap(event.position)
+
+func _unhandled_input(event):
+	if Global.is_paused:
+		return
+
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		handle_tile_tap(event.position)
+
+func handle_tile_tap(screen_pos: Vector2):
+	print("tap")
+	var world_pos = get_global_mouse_position()
+	var tapped_tile: Vector2i = mover.world_to_tile(world_pos)
+	print("tapped_tile:", tapped_tile)
+
+	# Check if an NPC is on that tile
+	var npc = TileOccupancy.get_occupant(current_location, tapped_tile)
+	print("occupant:", npc)
+	if npc and npc.has_method("interact_from"):
+		print("int")
+		npc.interact_from(self)
+
+
 func dir_to_anim(dir: Vector2i) -> String:
 	match dir:
 		Vector2i.UP: return "-up"

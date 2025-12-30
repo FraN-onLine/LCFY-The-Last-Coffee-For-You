@@ -18,3 +18,9 @@ func _process(delta: float) -> void:
 	if Global.is_new_day:
 		is_new_day = false
 		emit_signal("new_day")
+
+func is_time_in_range(min_h, min_m, max_h, max_m) -> bool:
+	var now = current_hour * 60 + current_minute
+	var min_t = min_h * 60 + min_m
+	var max_t = max_h * 60 + max_m
+	return now >= min_t and now <= max_t

@@ -4,7 +4,7 @@ extends CharacterBody2D
 # DATA
 # ----------------------------
 @export var npc_data: NPCData
-@export var collision_tilemap: TileMap
+@onready var collision_tilemap = get_tree().get_first_node_in_group("collision_tilemap")
 
 # ----------------------------
 # GRID MOVEMENT
@@ -47,7 +47,7 @@ func _ready():
 	set_daily_schedule()
 	play_animation("idle-right")
 
-	$InteractionArea.input_event.connect(_on_interaction_area_input)
+	#$InteractionArea.input_event.connect(_on_interaction_area_input)
 	Global.connect("new_day", new_day)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
@@ -70,10 +70,32 @@ func set_daily_schedule():
 	path_index = 0
 	available_today = false
 
-	var day := Global.current_day
-	if npc_data.schedule.has(day):
-		current_path = npc_data.schedule[day]
-		available_today = true
+	for schedule in npc_data.schedules:
+		if is_schedule_active(schedule):
+			current_location = schedule.location
+			mover.current_tile = schedule.spawn_tile
+			mover.snap_to_grid()
+
+			current_path = Pathfind.find_path(
+				schedule.spawn_tile,
+				schedule.destination_tile,
+				current_location,
+				collision_tilemap
+			)
+
+			available_today = true
+			return
+
+func is_schedule_active(schedule: NPCSchedule) -> bool:
+	if Global.current_day < schedule.min_day or Global.current_day > schedule.max_day:
+		return false
+
+	var time := Global.current_hour * 60 + Global.current_minute
+	if time < schedule.min_time or time > schedule.max_time:
+		return false
+
+	return true
+
 
 # ----------------------------
 # PROCESS
@@ -106,7 +128,7 @@ func can_move_to_tile(tile: Vector2i) -> bool:
 	if not collision_tilemap:
 		return true
 
-	var data := collision_tilemap.get_cell_tile_data(collision_layer, tile)
+	var data = collision_tilemap.get_cell_tile_data(collision_layer, tile)
 	if data == null:
 		return true
 
@@ -115,20 +137,48 @@ func can_move_to_tile(tile: Vector2i) -> bool:
 # ----------------------------
 # INTERACTION (TAP TILE)
 # ----------------------------
-func _on_interaction_area_input(viewport, event, shape_idx):
-	if not available_today:
+
+func interact_from(player):
+	#if not available_today:
+	#	return
+	if Global.is_paused:
 		return
-	if not event.is_action_pressed("interact"):
+	if not is_player_adjacent(player):
 		return
 
-	var player = get_tree().get_first_node_in_group("player")
-	if not player:
-		return
-
-	#if not is_player_adjacent(player):
-		#return
-
+	face_player(player)
 	interact_with_npc()
+
+func face_player(player):
+	var diff = player.mover.current_tile - mover.current_tile
+
+	if abs(diff.x) > abs(diff.y):
+		if diff.x > 0:
+			play_animation("idle-right")
+		else:
+			play_animation("idle-left")
+	else:
+		if diff.y > 0:
+			play_animation("idle-down")
+		else:
+			play_animation("idle-up")
+
+#func _on_interaction_area_input(viewport, event, shape_idx):
+#	if not available_today:
+#		return
+#	if not event.is_action_pressed("interact"):
+#		return
+
+#	var player = get_tree().get_first_node_in_group("player")
+#	if not player:
+#		return
+
+	# Must be adjacent
+	#if not is_player_adjacent(player):
+	#	return
+
+	#interact_with_npc()
+
 
 func is_player_adjacent(player) -> bool:
 	var player_tile: Vector2i = player.mover.current_tile
@@ -153,7 +203,9 @@ func interact_with_npc():
 	if not interacted_today:
 		var day_key = "day" + str(Global.current_day)
 		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, day_key)
-		get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
+		await get_tree().process_frame
+		if get_tree().get_first_node_in_group("dialogue_balloon"):
+			get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
 		Global.is_paused = true
 		interacted_today = true
 		met = true

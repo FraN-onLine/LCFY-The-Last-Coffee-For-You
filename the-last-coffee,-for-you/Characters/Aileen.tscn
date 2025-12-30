@@ -203,12 +203,12 @@ animations = [{
 size = Vector2(19, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyjah"]
-size = Vector2(50, 55)
+size = Vector2(129.5, 108.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6eptd"]
-size = Vector2(52.5, 56.5)
+size = Vector2(130, 110)
 
-[node name="NPC" type="CharacterBody2D"]
+[node name="Aileen" type="CharacterBody2D"]
 script = ExtResource("1_64dcp")
 npc_data = ExtResource("2_6ybb6")
 
@@ -217,7 +217,7 @@ position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_ws6e5")
 animation = &"walk-right"
 autoplay = "idle-front"
-frame_progress = 0.287987
+frame_progress = 0.895112
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
@@ -226,9 +226,11 @@ shape = SubResource("RectangleShape2D_64dcp")
 [node name="ProximityArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ProximityArea"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_qyjah")
 
 [node name="InteractionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_6eptd")
