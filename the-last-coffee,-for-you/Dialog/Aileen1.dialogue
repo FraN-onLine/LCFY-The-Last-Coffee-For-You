@@ -1,5 +1,5 @@
 ~ day1
-Aileen: This is day 1
+Aileen: Good Morning! {{Global.player_name}}, I was supposed to tend to the Coffee Shop today, but how about we enjoy our time together in the house today?
 => END
 ~ day2
 
