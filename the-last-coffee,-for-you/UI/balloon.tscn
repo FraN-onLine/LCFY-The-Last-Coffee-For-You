@@ -1,10 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://cfmp13kvnrrww"]
+[gd_scene load_steps=11 format=3 uid="uid://cfmp13kvnrrww"]
 
 [ext_resource type="Script" uid="uid://dyu6pcsvdg4h7" path="res://UI/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 [ext_resource type="Texture2D" uid="uid://b2vdel75ickrb" path="res://Assets/UI/Inventory.png" id="4_nxnsu"]
-[ext_resource type="Texture2D" uid="uid://b46hcmncutgqw" path="res://Assets/Characters/AIleen/Framed-Portraits-Aileen-Sheet.png" id="5_80h8d"]
+[ext_resource type="Texture2D" uid="uid://dmwiir1evk4r8" path="res://Assets/Characters/AIleen/Aileen-Worried.png" id="5_80h8d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -65,13 +65,11 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b58ux"]
-atlas = ExtResource("5_80h8d")
-region = Rect2(0, 0, 76, 76)
-
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
+next_action = null
+skip_action = null
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
@@ -198,7 +196,7 @@ text = "Dialogue..."
 [node name="Framed-portraits-aileen-sheet" type="Sprite2D" parent="."]
 position = Vector2(1025, 532)
 scale = Vector2(2.42846, 2.25658)
-texture = SubResource("AtlasTexture_b58ux")
+texture = ExtResource("5_80h8d")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

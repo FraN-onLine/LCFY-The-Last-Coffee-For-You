@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 @export var npc_data: NPCData
 @export var speed: float = 80.0
+var normal_portrait = preload("res://Assets/Characters/AIleen/Aileen-Normal.png")
+var angry_portrait = preload("res://Assets/Characters/AIleen/Aileen-Angry.png")
+var joyous_portrait = preload("res://Assets/Characters/AIleen/Aileen-Joyous.png")
+var worried_portrait = preload("res://Assets/Characters/AIleen/Aileen-Worried.png")
+var sad_portrait = preload("res://Assets/Characters/AIleen/Aileen-Sad.png")
 var player_nearby := false
 var current_path: Array = []
 var path_index: int = 0
