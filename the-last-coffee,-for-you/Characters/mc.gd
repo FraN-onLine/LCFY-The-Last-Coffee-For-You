@@ -79,6 +79,7 @@ func check_teleport_tile():
 	var spawn_id = int(data.get_custom_data("spawn_id"))
 
 	Global.is_paused = true
+	TileOccupancy.vacate(current_location, mover.current_tile)
 	MapTransitionManager.change_map(target_map, spawn_id, self)
 
 
