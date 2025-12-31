@@ -1,27 +1,27 @@
 [gd_scene load_steps=52 format=4 uid="uid://chapu1rm51qju"]
 
-[ext_resource type="PackedScene" uid="uid://8437no1d02s6" path="res://Characters/MC.tscn" id="1_7lncl"]
-[ext_resource type="Texture2D" uid="uid://bhi6poxy2eis3" path="res://Assets/Tilemaps/Outside.png" id="2_7lncl"]
-[ext_resource type="Texture2D" uid="uid://bqbgljpvxcwfc" path="res://Assets/Tilemaps/Layer-Colors.png" id="3_n33ae"]
-[ext_resource type="PackedScene" uid="uid://slg3fopeyvok" path="res://Interactables/interactable.tscn" id="4_4sapw"]
-[ext_resource type="PackedScene" uid="uid://dda8k74kv6rgt" path="res://Interactables/door.tscn" id="5_tk06b"]
-[ext_resource type="PackedScene" uid="uid://bm2k6uwnagk5r" path="res://Interactables/container_interactable.tscn" id="6_smpip"]
-[ext_resource type="Script" uid="uid://bxfu686h256w1" path="res://Inventory/Inventory.gd" id="7_vqbvv"]
-[ext_resource type="Script" uid="uid://ynalysw4txi0" path="res://Inventory/slot.gd" id="8_c8eub"]
-[ext_resource type="Resource" uid="uid://b3tm4djpel060" path="res://Inventory/Items/sugar.tres" id="9_ejfkx"]
-[ext_resource type="Resource" uid="uid://5u7inoxq2wab" path="res://Inventory/Items/tea_leaves.tres" id="10_k4waf"]
-[ext_resource type="Resource" uid="uid://clyw5ynq7uat8" path="res://Inventory/Items/icecream.tres" id="11_3jp5n"]
-[ext_resource type="Resource" uid="uid://fgp8dfuypcmu" path="res://Inventory/Items/affogato.tres" id="12_vxk51"]
-[ext_resource type="Resource" uid="uid://bsyfc63yj842t" path="res://Inventory/Items/strawberry.tres" id="13_mdwea"]
-[ext_resource type="Resource" uid="uid://ccjbgxymcdjdm" path="res://Inventory/Items/tea.tres" id="14_vcd12"]
-[ext_resource type="Resource" uid="uid://xjjsptpgpb5a" path="res://Inventory/Items/foamed_milk.tres" id="15_rbhuk"]
-[ext_resource type="Resource" uid="uid://cmoncs7y1sphp" path="res://Inventory/Items/parfait.tres" id="16_ho3mi"]
-[ext_resource type="Resource" uid="uid://c13cipgeoq2xl" path="res://Inventory/Items/espresso.tres" id="17_hkm1k"]
-[ext_resource type="PackedScene" uid="uid://dhpwlqf2jnmj7" path="res://UI/UI.tscn" id="18_kqic1"]
-[ext_resource type="PackedScene" uid="uid://c52fihihm67w1" path="res://Characters/Aileen.tscn" id="19_7pncr"]
+[ext_resource type="PackedScene" uid="uid://8437no1d02s6" path="res://Characters/MC.tscn" id="1_br2mr"]
+[ext_resource type="Texture2D" uid="uid://bhi6poxy2eis3" path="res://Assets/Tilemaps/Outside.png" id="2_gxoln"]
+[ext_resource type="Texture2D" uid="uid://bqbgljpvxcwfc" path="res://Assets/Tilemaps/Layer-Colors.png" id="3_8nwgp"]
+[ext_resource type="PackedScene" uid="uid://slg3fopeyvok" path="res://Interactables/interactable.tscn" id="4_xexw2"]
+[ext_resource type="PackedScene" uid="uid://dda8k74kv6rgt" path="res://Interactables/door.tscn" id="5_topiv"]
+[ext_resource type="PackedScene" uid="uid://bm2k6uwnagk5r" path="res://Interactables/container_interactable.tscn" id="6_cu4mt"]
+[ext_resource type="Script" uid="uid://bxfu686h256w1" path="res://Inventory/Inventory.gd" id="7_7qbyd"]
+[ext_resource type="Script" uid="uid://ynalysw4txi0" path="res://Inventory/slot.gd" id="8_7m1xr"]
+[ext_resource type="Resource" uid="uid://b3tm4djpel060" path="res://Inventory/Items/sugar.tres" id="9_sqghc"]
+[ext_resource type="Resource" uid="uid://5u7inoxq2wab" path="res://Inventory/Items/tea_leaves.tres" id="10_15yj4"]
+[ext_resource type="Resource" uid="uid://clyw5ynq7uat8" path="res://Inventory/Items/icecream.tres" id="11_pq6xd"]
+[ext_resource type="Resource" uid="uid://fgp8dfuypcmu" path="res://Inventory/Items/affogato.tres" id="12_o28ld"]
+[ext_resource type="Resource" uid="uid://bsyfc63yj842t" path="res://Inventory/Items/strawberry.tres" id="13_isee8"]
+[ext_resource type="Resource" uid="uid://ccjbgxymcdjdm" path="res://Inventory/Items/tea.tres" id="14_xmoq2"]
+[ext_resource type="Resource" uid="uid://xjjsptpgpb5a" path="res://Inventory/Items/foamed_milk.tres" id="15_n0xq5"]
+[ext_resource type="Resource" uid="uid://cmoncs7y1sphp" path="res://Inventory/Items/parfait.tres" id="16_b0r3n"]
+[ext_resource type="Resource" uid="uid://c13cipgeoq2xl" path="res://Inventory/Items/espresso.tres" id="17_8i05q"]
+[ext_resource type="PackedScene" uid="uid://dhpwlqf2jnmj7" path="res://UI/UI.tscn" id="18_nbqqh"]
+[ext_resource type="PackedScene" uid="uid://c52fihihm67w1" path="res://Characters/Aileen.tscn" id="19_jst4b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_umuqw"]
-texture = ExtResource("2_7lncl")
+texture = ExtResource("2_gxoln")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -202,15 +202,14 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_umuqw")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4pbpl"]
-texture = ExtResource("3_n33ae")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nrsim"]
+texture = ExtResource("3_8nwgp")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/custom_data_0 = true
 2:0/0 = 0
 3:0/0 = 0
-0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -222,12 +221,22 @@ texture_region_size = Vector2i(32, 32)
 1:3/0 = 0
 2:3/0 = 0
 3:3/0 = 0
+0:1/0 = 0
+0:1/0/custom_data_1 = true
+0:1/0/custom_data_2 = "mainroom"
+0:1/0/custom_data_3 = 1
 
-[sub_resource type="TileSet" id="TileSet_vk3rj"]
+[sub_resource type="TileSet" id="TileSet_sjsfs"]
 tile_size = Vector2i(32, 32)
 custom_data_layer_0/name = "Blocked"
 custom_data_layer_0/type = 1
-sources/2 = SubResource("TileSetAtlasSource_4pbpl")
+custom_data_layer_1/name = "teleport"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "target_map"
+custom_data_layer_2/type = 4
+custom_data_layer_3/name = "spawn_id"
+custom_data_layer_3/type = 2
+sources/2 = SubResource("TileSetAtlasSource_nrsim")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hqxqd"]
 load_path = "res://.godot/imported/Room2.png-06b34453e7b44540fd77d110b9efb66e.ctex"
@@ -237,154 +246,162 @@ atlas = SubResource("CompressedTexture2D_hqxqd")
 region = Rect2(32, 160, 32, 32)
 
 [sub_resource type="Resource" id="Resource_nfn2a"]
-script = ExtResource("8_c8eub")
-item = ExtResource("9_ejfkx")
+script = ExtResource("8_7m1xr")
+item = ExtResource("9_sqghc")
 amount = 2
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_fuyc6"]
-script = ExtResource("8_c8eub")
-item = ExtResource("10_k4waf")
+script = ExtResource("8_7m1xr")
+item = ExtResource("10_15yj4")
 amount = 2
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_lntxb"]
-script = ExtResource("8_c8eub")
-item = ExtResource("11_3jp5n")
+script = ExtResource("8_7m1xr")
+item = ExtResource("11_pq6xd")
 amount = 4
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_hqxqd"]
-script = ExtResource("8_c8eub")
-item = ExtResource("12_vxk51")
+script = ExtResource("8_7m1xr")
+item = ExtResource("12_o28ld")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_4pbpl"]
-script = ExtResource("8_c8eub")
-item = ExtResource("13_mdwea")
+script = ExtResource("8_7m1xr")
+item = ExtResource("13_isee8")
 amount = 1
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_vk3rj"]
-script = ExtResource("8_c8eub")
-item = ExtResource("14_vcd12")
+script = ExtResource("8_7m1xr")
+item = ExtResource("14_xmoq2")
 amount = 3
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_vgvpu"]
-script = ExtResource("8_c8eub")
-item = ExtResource("15_rbhuk")
+script = ExtResource("8_7m1xr")
+item = ExtResource("15_n0xq5")
 amount = 2
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_e4om7"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_80k5m"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_dp6bv"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_0x4nl"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_ce7k3"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_4gpr3"]
-script = ExtResource("7_vqbvv")
-slots = Array[ExtResource("8_c8eub")]([SubResource("Resource_nfn2a"), SubResource("Resource_fuyc6"), SubResource("Resource_lntxb"), SubResource("Resource_hqxqd"), SubResource("Resource_4pbpl"), SubResource("Resource_vk3rj"), SubResource("Resource_vgvpu"), SubResource("Resource_e4om7"), SubResource("Resource_80k5m"), SubResource("Resource_dp6bv"), SubResource("Resource_0x4nl"), SubResource("Resource_ce7k3")])
+script = ExtResource("7_7qbyd")
+slots = Array[ExtResource("8_7m1xr")]([SubResource("Resource_nfn2a"), SubResource("Resource_fuyc6"), SubResource("Resource_lntxb"), SubResource("Resource_hqxqd"), SubResource("Resource_4pbpl"), SubResource("Resource_vk3rj"), SubResource("Resource_vgvpu"), SubResource("Resource_e4om7"), SubResource("Resource_80k5m"), SubResource("Resource_dp6bv"), SubResource("Resource_0x4nl"), SubResource("Resource_ce7k3")])
 metadata/_custom_type_script = "uid://bxfu686h256w1"
 
 [sub_resource type="Resource" id="Resource_0x0j8"]
-script = ExtResource("8_c8eub")
-item = ExtResource("9_ejfkx")
+script = ExtResource("8_7m1xr")
+item = ExtResource("9_sqghc")
 amount = 32
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_k0ssk"]
-script = ExtResource("8_c8eub")
-item = ExtResource("13_mdwea")
+script = ExtResource("8_7m1xr")
+item = ExtResource("13_isee8")
 amount = 5
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_gl28f"]
-script = ExtResource("8_c8eub")
-item = ExtResource("16_ho3mi")
+script = ExtResource("8_7m1xr")
+item = ExtResource("16_b0r3n")
 amount = 7
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_fk8xu"]
-script = ExtResource("8_c8eub")
-item = ExtResource("17_hkm1k")
+script = ExtResource("8_7m1xr")
+item = ExtResource("17_8i05q")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_ahvoh"]
-script = ExtResource("8_c8eub")
-item = ExtResource("9_ejfkx")
+script = ExtResource("8_7m1xr")
+item = ExtResource("9_sqghc")
 amount = 6
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_v38wv"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_sdff7"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_lri8y"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_ijov8"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_s55aa"]
-script = ExtResource("8_c8eub")
+script = ExtResource("8_7m1xr")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_87mjh"]
-script = ExtResource("8_c8eub")
-item = ExtResource("16_ho3mi")
+script = ExtResource("8_7m1xr")
+item = ExtResource("16_b0r3n")
 amount = 1
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_ukbad"]
-script = ExtResource("8_c8eub")
-item = ExtResource("12_vxk51")
+script = ExtResource("8_7m1xr")
+item = ExtResource("12_o28ld")
 amount = 0
 metadata/_custom_type_script = "uid://ynalysw4txi0"
 
 [sub_resource type="Resource" id="Resource_5cjpy"]
-script = ExtResource("7_vqbvv")
-slots = Array[ExtResource("8_c8eub")]([SubResource("Resource_0x0j8"), SubResource("Resource_k0ssk"), SubResource("Resource_gl28f"), SubResource("Resource_fk8xu"), SubResource("Resource_ahvoh"), SubResource("Resource_v38wv"), SubResource("Resource_sdff7"), SubResource("Resource_lri8y"), SubResource("Resource_ijov8"), SubResource("Resource_s55aa"), SubResource("Resource_87mjh"), SubResource("Resource_ukbad")])
+script = ExtResource("7_7qbyd")
+slots = Array[ExtResource("8_7m1xr")]([SubResource("Resource_0x0j8"), SubResource("Resource_k0ssk"), SubResource("Resource_gl28f"), SubResource("Resource_fk8xu"), SubResource("Resource_ahvoh"), SubResource("Resource_v38wv"), SubResource("Resource_sdff7"), SubResource("Resource_lri8y"), SubResource("Resource_ijov8"), SubResource("Resource_s55aa"), SubResource("Resource_87mjh"), SubResource("Resource_ukbad")])
 metadata/_custom_type_script = "uid://bxfu686h256w1"
 
 [node name="House" type="Node2D"]
 
-[node name="MC" parent="." instance=ExtResource("1_7lncl")]
+[node name="MC" parent="." instance=ExtResource("1_br2mr")]
 z_index = 1
-position = Vector2(143, 8)
+position = Vector2(143, 51)
+
+[node name="Spawnpoints" type="Node" parent="." groups=["spawnpoints"]]
+
+[node name="Spawn_0" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(9, 77)
+
+[node name="Spawn_1" type="Marker2D" parent="Spawnpoints"]
+position = Vector2(431, 54)
 
 [node name="Map" type="Node" parent="."]
 
@@ -397,12 +414,12 @@ tile_map_data = PackedByteArray("AAACAP7/AAAFAAAAAAACAP//AAAFAAEAAAACAAAAAAAFAAI
 tile_set = SubResource("TileSet_n33ae")
 
 [node name="Tile-Attributes" type="TileMapLayer" parent="Map" groups=["collision_tilemap"]]
-tile_map_data = PackedByteArray("AAADAPr/AgABAAAAAAAEAPr/AgABAAAAAAAFAPr/AgABAAAAAAAGAPr/AgABAAAAAAAHAPr/AgABAAAAAAAIAPr/AgABAAAAAAAJAPr/AgABAAAAAAAKAPr/AgABAAAAAAALAPr/AgABAAAAAAAMAPr/AgABAAAAAAANAPr/AgABAAAAAAAOAPr/AgABAAAAAAAPAPr/AgABAAAAAAAJAPv/AgABAAAAAAAKAPv/AgABAAAAAAALAPv/AgABAAAAAAAUAP//AgABAAAAAAAQAP3/AgABAAAAAAAQAPz/AgABAAAAAAAQAPv/AgABAAAAAAAQAPr/AgABAAAAAAAQAPn/AgABAAAAAAARAP3/AgABAAAAAAASAP3/AgABAAAAAAATAP3/AgABAAAAAAAUAP3/AgABAAAAAAAUAPz/AgABAAAAAAAUAPv/AgABAAAAAAAUAPr/AgABAAAAAAAUAAAAAgABAAAAAAAUAAEAAgABAAAAAAAUAAIAAgABAAAAAAAUAAMAAgABAAAAAAAVAAMAAgABAAAAAAAWAAMAAgABAAAAAAAXAAMAAgABAAAAAAAYAAMAAgABAAAAAAAZAAMAAgABAAAAAAAaAAMAAgABAAAAAAAbAAMAAgABAAAAAAAcAAMAAgABAAAAAAAcAAIAAgABAAAAAAAcAAEAAgABAAAAAAAcAAAAAgABAAAAAAAcAP//AgABAAAAAAAVAPr/AgABAAAAAAAWAPr/AgABAAAAAAAXAPr/AgABAAAAAAAXAPn/AgABAAAAAAAXAPj/AgABAAAAAAAWAPj/AgABAAAAAAAVAPj/AgABAAAAAAAUAPj/AgABAAAAAAAbAPj/AgABAAAAAAAaAPj/AgABAAAAAAAZAPj/AgABAAAAAAAZAPn/AgABAAAAAAAZAPr/AgABAAAAAAAaAPr/AgABAAAAAAAbAPr/AgABAAAAAAAcAPr/AgABAAAAAAAcAPv/AgABAAAAAAAcAPz/AgABAAAAAAAcAP3/AgABAAAAAAATAPj/AgABAAAAAAATAPf/AgABAAAAAAATAPb/AgABAAAAAAATAPX/AgABAAAAAAATAPT/AgABAAAAAAATAPP/AgABAAAAAAATAPL/AgABAAAAAAAUAPL/AgABAAAAAAAVAPL/AgABAAAAAAAWAPL/AgABAAAAAAAXAPL/AgABAAAAAAAYAPL/AgABAAAAAAAZAPL/AgABAAAAAAAaAPL/AgABAAAAAAAbAPL/AgABAAAAAAAcAPL/AgABAAAAAAAdAPL/AgABAAAAAAAcAPP/AgABAAAAAAAPAPv/AgABAAAAAAAdAPP/AgABAAAAAAAdAPT/AgABAAAAAAAdAPX/AgABAAAAAAAdAPb/AgABAAAAAAAdAPf/AgABAAAAAAAcAPj/AgABAAAAAAAdAPr/AgABAAAAAAAeAPv/AgABAAAAAAAfAPv/AgABAAAAAAAgAPv/AgABAAAAAAAdAAIAAgABAAAAAAAeAAIAAgABAAAAAAAfAAIAAgABAAAAAAAhAAIAAgABAAAAAAAiAAIAAgABAAAAAAAjAAIAAgABAAAAAAAkAAIAAgABAAAAAAAkAAEAAgABAAAAAAAkAAAAAgABAAAAAAAkAP//AgABAAAAAAAkAP7/AgABAAAAAAAkAP3/AgABAAAAAAAkAPz/AgABAAAAAAAkAPv/AgABAAAAAAAkAPr/AgABAAAAAAAjAPr/AgABAAAAAAAiAPr/AgABAAAAAAAhAPr/AgABAAAAAAAgAPr/AgABAAAAAAAfAPr/AgABAAAAAAAeAPr/AgABAAAAAAAiAPv/AgABAAAAAAAhAPv/AgABAAAAAAAhAAMAAgABAAAAAAAiAAMAAgABAAAAAAAjAAMAAgABAAAAAAAkAAMAAgABAAAAAAAkAAQAAgABAAAAAAAkAAUAAgABAAAAAAAkAAYAAgABAAAAAAAkAAcAAgABAAAAAAAkAAgAAgABAAAAAAAjAAgAAgABAAAAAAAiAAgAAgABAAAAAAAhAAgAAgABAAAAAAAgAAgAAgABAAAAAAAfAAgAAgABAAAAAAAeAAgAAgABAAAAAAAdAAgAAgABAAAAAAAcAAgAAgABAAAAAAAcAAcAAgABAAAAAAAcAAYAAgABAAAAAAAcAAUAAgABAAAAAAAcAAQAAgABAAAAAAAdAAMAAgABAAAAAAAeAAMAAgABAAAAAAAfAAMAAgABAAAAAAA=")
-tile_set = SubResource("TileSet_vk3rj")
+tile_map_data = PackedByteArray("AAAEAAAAAgAAAAEAAAACAAAAAgABAAAAAAADAAAAAgABAAAAAAAFAAAAAgABAAAAAAAGAAAAAgABAAAAAAACAP//AgABAAAAAAADAP//AgABAAAAAAAEAP//AgABAAAAAAAFAP//AgABAAAAAAAGAP//AgABAAAAAAALAAAAAgABAAAAAAAMAAAAAgABAAAAAAALAP//AgABAAAAAAAMAP//AgABAAAAAAANAP//AgABAAAAAAAOAP//AgABAAAAAAAPAP//AgABAAAAAAAOAAAAAgABAAAAAAAPAAAAAgABAAAAAAD5//z/AgABAAAAAAD5//3/AgABAAAAAAD5//7/AgABAAAAAAD5////AgABAAAAAAD5/wAAAgABAAAAAAD5/wEAAgABAAAAAAD5/wIAAgABAAAAAAD5/wMAAgABAAAAAAD5/wQAAgABAAAAAAD5/wUAAgABAAAAAAD5/wYAAgABAAAAAAD5/wcAAgABAAAAAAA=")
+tile_set = SubResource("TileSet_sjsfs")
 
 [node name="Interactables" type="Node" parent="."]
 
-[node name="Interactable" parent="Interactables" instance=ExtResource("4_4sapw")]
+[node name="Interactable" parent="Interactables" instance=ExtResource("4_xexw2")]
 visible = false
 position = Vector2(30, -84)
 popup_text = "It's an Empty piece of paper... "
@@ -410,7 +427,7 @@ popup_text = "It's an Empty piece of paper... "
 [node name="CollisionShape2D" parent="Interactables/Interactable/Area2D" index="0"]
 position = Vector2(0, 6)
 
-[node name="Interactable2" parent="Interactables" instance=ExtResource("4_4sapw")]
+[node name="Interactable2" parent="Interactables" instance=ExtResource("4_xexw2")]
 visible = false
 position = Vector2(30, -84)
 rotation = -3.14159
@@ -420,12 +437,12 @@ popup_text = "A hole in the floor, one your brother made when he was young"
 [node name="CollisionShape2D" parent="Interactables/Interactable2/Area2D" index="0"]
 position = Vector2(104.591, -82.0077)
 
-[node name="Door" parent="Interactables" instance=ExtResource("5_tk06b")]
+[node name="Door" parent="Interactables" instance=ExtResource("5_topiv")]
 visible = false
 position = Vector2(472, 85)
 scale = Vector2(0.872939, 1.06876)
 
-[node name="Door2" parent="Interactables" instance=ExtResource("5_tk06b")]
+[node name="Door2" parent="Interactables" instance=ExtResource("5_topiv")]
 visible = false
 position = Vector2(293, -147)
 scale = Vector2(0.818773, 0.845108)
@@ -434,20 +451,20 @@ locked = true
 [node name="Sprite2D" parent="Interactables/Door2" index="1"]
 texture = SubResource("AtlasTexture_4pbpl")
 
-[node name="container_interactable2" parent="Interactables" instance=ExtResource("6_smpip")]
+[node name="container_interactable2" parent="Interactables" instance=ExtResource("6_cu4mt")]
 visible = false
 position = Vector2(-76, -74)
 container_inventory = SubResource("Resource_4gpr3")
 
-[node name="container_interactable" parent="Interactables" instance=ExtResource("6_smpip")]
+[node name="container_interactable" parent="Interactables" instance=ExtResource("6_cu4mt")]
 visible = false
 position = Vector2(498, -66)
 container_inventory = SubResource("Resource_5cjpy")
 
-[node name="UI" parent="." instance=ExtResource("18_kqic1")]
+[node name="UI" parent="." instance=ExtResource("18_nbqqh")]
 visible = false
 
-[node name="NPC" parent="." instance=ExtResource("19_7pncr")]
+[node name="NPC" parent="." instance=ExtResource("19_jst4b")]
 z_index = 1
 position = Vector2(308, -110)
 

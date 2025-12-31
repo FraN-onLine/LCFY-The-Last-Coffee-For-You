@@ -32,6 +32,9 @@ func _ready():
 	global_position = mover.setup(global_position)
 	TileOccupancy.occupy(current_location, mover.current_tile, self)
 
+	MapTransitionManager.place_player(self)
+	Global.is_paused = false
+
 
 # ----------------------------
 # PROCESS
@@ -47,6 +50,9 @@ func _physics_process(delta):
 		update_animation(null)
 		return
 
+	if not mover.is_moving:
+		check_teleport_tile()
+
 	var dir := get_input_direction()
 	if dir != Vector2i.ZERO:
 		direction = dir_to_anim(dir)
@@ -56,6 +62,25 @@ func _physics_process(delta):
 		update_animation(dir)
 	else:
 		update_animation(dir)
+
+func check_teleport_tile():
+	var tilemap: TileMapLayer = get_tree().get_first_node_in_group("collision_tilemap")
+	if not tilemap:
+		return
+
+	var data = tilemap.get_cell_tile_data(mover.current_tile)
+	if not data:
+		return
+
+	if not data.get_custom_data("teleport"):
+		return
+
+	var target_map = data.get_custom_data("target_map")
+	var spawn_id = int(data.get_custom_data("spawn_id"))
+
+	Global.is_paused = true
+	MapTransitionManager.change_map(target_map, spawn_id, self)
+
 
 # ----------------------------
 # INPUT
@@ -126,8 +151,9 @@ func can_move_to_tile(tile: Vector2i) -> bool:
 func update_animation(dir):
 	animation = "walk" if (mover.is_moving or dir != Vector2i.ZERO) else "idle"
 	animation += direction
-
-	var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
+	var inv_ui = null
+	if get_tree():
+		inv_ui = get_tree().get_first_node_in_group("inventory_ui")
 	if inv_ui:
 		var slot = inv.slots[inv_ui.selected_index]
 		if slot.item:
