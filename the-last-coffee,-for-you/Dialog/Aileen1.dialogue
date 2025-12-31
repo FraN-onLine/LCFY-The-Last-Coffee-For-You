@@ -1,6 +1,12 @@
 ~ day1
 Aileen: Good Morning! {{Global.player_name}}, I was supposed to tend to the Coffee Shop today, but how about we enjoy our time together in the house today?
+- I'll go check the Coffee Shop in your Stead
+	Aileen: If you insist, It should be the last of your worries.. since..
+	Aileen: Nevermind, I appreciate it regardless
+- Don't worry, you should go rest. 
+	Aileen: I don't think i should be the one resting..., We'll stay here together?
 => END
+
 ~ day2
 
 	Aileen: Oh Good Morning [wave]{{Global.player_name}}[wave]
@@ -8,7 +14,7 @@ Aileen: Good Morning! {{Global.player_name}}, I was supposed to tend to the Coff
 
 	- I think i'll get some fresh air
 		Aileen: Oh alright then...
-	- Ill go check up on him
+	- I'll go check up on him
 		Aileen: Yeah he's been shut in for a while.. i hope he is alright..
 	- Nothing beats a Jet2 Holiday =>< AdRead
 	Aileen: Please, Get well soon

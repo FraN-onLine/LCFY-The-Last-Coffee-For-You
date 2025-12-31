@@ -4,10 +4,11 @@ class_name NPCSchedule
 @export var min_day := 1
 @export var max_day := 999
 
-@export var min_time := 0        # minutes since midnight
-@export var max_time := 1440
+@export var location := "room"
 
-@export var location := "town_proper"
+# Minutes since midnight
+@export var start_time := 600
+@export var end_time := 720
 
-@export var spawn_tile: Vector2i
-@export var destination_tile: Vector2i
+@export var from_tile: Vector2i
+@export var to_tile: Vector2i
