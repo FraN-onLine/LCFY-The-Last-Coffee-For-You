@@ -489,10 +489,10 @@ position = Vector2(308, -110)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -5
-offset_left = -695.0
-offset_top = -708.0
-offset_right = 1357.0
-offset_bottom = 642.0
+offset_left = -702.0
+offset_top = -703.0
+offset_right = 1350.0
+offset_bottom = 647.0
 color = Color(0.0140528, 0.0113063, 0.111716, 1)
 
 [editable path="Interactables/Interactable"]

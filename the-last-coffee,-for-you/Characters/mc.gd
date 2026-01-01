@@ -171,5 +171,6 @@ func play_idle_animation():
 # HELD ITEM
 # ----------------------------
 func set_held_item_texture(texture: Texture2D):
-	held_item_sprite.texture = texture
-	held_item_sprite.visible = texture != null
+	if held_item_sprite:
+		held_item_sprite.texture = texture
+		held_item_sprite.visible = texture != null

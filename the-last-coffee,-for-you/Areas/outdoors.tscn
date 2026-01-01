@@ -224,7 +224,6 @@ texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
 0:1/0/custom_data_1 = true
 0:1/0/custom_data_2 = "mainroom"
-0:1/0/custom_data_3 = 1
 
 [sub_resource type="TileSet" id="TileSet_sjsfs"]
 tile_size = Vector2i(32, 32)
@@ -389,16 +388,12 @@ script = ExtResource("7_7qbyd")
 slots = Array[ExtResource("8_7m1xr")]([SubResource("Resource_0x0j8"), SubResource("Resource_k0ssk"), SubResource("Resource_gl28f"), SubResource("Resource_fk8xu"), SubResource("Resource_ahvoh"), SubResource("Resource_v38wv"), SubResource("Resource_sdff7"), SubResource("Resource_lri8y"), SubResource("Resource_ijov8"), SubResource("Resource_s55aa"), SubResource("Resource_87mjh"), SubResource("Resource_ukbad")])
 metadata/_custom_type_script = "uid://bxfu686h256w1"
 
-[node name="House" type="Node2D"]
-
-[node name="MC" parent="." instance=ExtResource("1_br2mr")]
-z_index = 1
-position = Vector2(143, 51)
+[node name="Outside" type="Node2D"]
 
 [node name="Spawnpoints" type="Node" parent="." groups=["spawnpoints"]]
 
 [node name="Spawn_0" type="Marker2D" parent="Spawnpoints"]
-position = Vector2(9, 77)
+position = Vector2(142, 53)
 
 [node name="Spawn_1" type="Marker2D" parent="Spawnpoints"]
 position = Vector2(431, 54)
@@ -461,9 +456,6 @@ visible = false
 position = Vector2(498, -66)
 container_inventory = SubResource("Resource_5cjpy")
 
-[node name="UI" parent="." instance=ExtResource("18_nbqqh")]
-visible = false
-
 [node name="NPC" parent="." instance=ExtResource("19_jst4b")]
 z_index = 1
 position = Vector2(308, -110)
@@ -476,6 +468,10 @@ offset_top = -708.0
 offset_right = 1357.0
 offset_bottom = 642.0
 color = Color(0.0140528, 0.0113063, 0.111716, 1)
+
+[node name="UI" parent="." instance=ExtResource("18_nbqqh")]
+
+[node name="MC" parent="." instance=ExtResource("1_br2mr")]
 
 [editable path="Interactables/Interactable"]
 [editable path="Interactables/Interactable2"]
