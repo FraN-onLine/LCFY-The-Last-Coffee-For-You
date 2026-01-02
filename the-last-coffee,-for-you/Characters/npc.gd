@@ -38,6 +38,12 @@ var sad_portrait = preload("res://Assets/Characters/AIleen/Aileen-Sad.png")
 # READY
 # ----------------------------
 func _ready():
+	normal_portrait = npc_data.normal_portrait
+	angry_portrait = npc_data.angry_portrait
+	joyous_portrait = npc_data.joyous_portrait
+	worried_portrait = npc_data.worried_portrait
+	sad_portrait = npc_data.sad_portrait
+	
 	add_child(mover)
 	mover.move_speed = 3.0
 	mover.move_repeat_delay = 0.0

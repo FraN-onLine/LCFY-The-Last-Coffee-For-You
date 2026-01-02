@@ -15,3 +15,10 @@ class_name NPCData
 @export var loved_items: Array[Inventory_Item]
 @export var hated_items: Array[Inventory_Item]
 @export var dialogue_path: DialogueResource
+
+# --------- PORTRAITS ----------
+@export var normal_portrait: Texture2D
+@export var joyous_portrait: Texture2D
+@export var sad_portrait: Texture2D
+@export var angry_portrait: Texture2D
+@export var worried_portrait: Texture2D
