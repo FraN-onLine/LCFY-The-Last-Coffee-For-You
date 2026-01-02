@@ -11,7 +11,6 @@ class_name NPCData
 @export var cutscenes: Array[NPCCutscene] = []
 
 # -------- DIALOGUE / ITEMS --------
-@export var animations: Dictionary
 @export var loved_items: Array[Inventory_Item]
 @export var hated_items: Array[Inventory_Item]
 @export var dialogue_path: DialogueResource

@@ -1,0 +1,54 @@
+~ day1
+Gabhie: Good Morning! {{Global.player_name}}, I was supposed to tend to the Coffee Shop today, but how about we enjoy our time together in the house today?
+- I'll go check the Coffee Shop in your Stead
+	Gabhie: If you insist, It should be the last of your worries.. since..
+	Gabhie: Nevermind, I appreciate it regardless
+- Don't worry, you should go rest. 
+	Aileen: I don't think i should be the one resting..., We'll stay here together?
+=> END
+
+~ day2
+
+	Aileen: Oh Good Morning [wave]{{Global.player_name}}[wave]
+	Aileen: What's your plans for today? [wait= 1] Maybe checking in with your brother will be a good idea?
+
+	- I think i'll get some fresh air
+		Aileen: Oh alright then...
+	- I'll go check up on him
+		Aileen: Yeah he's been shut in for a while.. i hope he is alright..
+	- Nothing beats a Jet2 Holiday =>< AdRead
+	Aileen: Please, Get well soon
+	=> END
+
+~ day3
+Aileen: This is day 3
+~ AdRead
+Aileen: And Right [b]Now[/b] [wave] You can save 50 POUNDS Per Person [wave]
+Aileen: [tornado] That's 200 Pounds off for a Family of Four [/tornado]
+Aileen: We got [tornado]MILLIONS[/tornado] of free childplace holidays available
+Aileen: with [shake]22 Kilograms of Baggage Included[/shake]
+Aileen: [rainbow]BOOK NOW[/rainbow]
+=> END
+
+
+
+
+
+~ liked
+Aileen: You know what i...
+Aileen: Just how it used to be~
+=> END
+
+~ neutral
+Aileen: Oh lovely, thanks for this
+Aileen: might serve as a good momento
+=> END
+
+~ hated
+Aileen: Uhmm.. yeah thanks for the thought dear 
+Aileen: It's lovely
+=> END
+
+~ liked_gifted_thrice
+Aileen: You always know the way to my heart <3
+Aileen: This won't be the same without you......

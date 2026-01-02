@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhc37t6vu7ona"
+path="res://.godot/imported/Gabhie.dialogue-63c9bb564700519730ddb75eb2b6c4c2.tres"
+
+[deps]
+
+source_file="res://Dialog/Gabhie.dialogue"
+dest_files=["res://.godot/imported/Gabhie.dialogue-63c9bb564700519730ddb75eb2b6c4c2.tres"]
+
+[params]
+
+defaults=true

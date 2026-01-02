@@ -18,7 +18,7 @@
 [ext_resource type="Resource" uid="uid://cmoncs7y1sphp" path="res://Inventory/Items/parfait.tres" id="16_b0r3n"]
 [ext_resource type="Resource" uid="uid://c13cipgeoq2xl" path="res://Inventory/Items/espresso.tres" id="17_8i05q"]
 [ext_resource type="PackedScene" uid="uid://dhpwlqf2jnmj7" path="res://UI/UI.tscn" id="18_nbqqh"]
-[ext_resource type="PackedScene" uid="uid://c52fihihm67w1" path="res://Characters/Aileen.tscn" id="19_jst4b"]
+[ext_resource type="PackedScene" uid="uid://csxqvggs3nc7t" path="res://Characters/Gabhie.tscn" id="19_br2mr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_umuqw"]
 texture = ExtResource("2_gxoln")
@@ -456,10 +456,6 @@ visible = false
 position = Vector2(498, -66)
 container_inventory = SubResource("Resource_5cjpy")
 
-[node name="NPC" parent="." instance=ExtResource("19_jst4b")]
-z_index = 1
-position = Vector2(308, -110)
-
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 z_index = -5
@@ -472,6 +468,10 @@ color = Color(0.0140528, 0.0113063, 0.111716, 1)
 [node name="UI" parent="." instance=ExtResource("18_nbqqh")]
 
 [node name="MC" parent="." instance=ExtResource("1_br2mr")]
+
+[node name="Gabhie" parent="." instance=ExtResource("19_br2mr")]
+z_index = 1
+position = Vector2(180, 49)
 
 [editable path="Interactables/Interactable"]
 [editable path="Interactables/Interactable2"]
