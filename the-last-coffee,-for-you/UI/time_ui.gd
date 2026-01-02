@@ -7,7 +7,6 @@ extends Control
 @export var night_texture: Texture2D
 
 var time_accumulator: float = 0.0
-var morning: bool = true
 var fade_in_progress: bool = false
 var paused = false
 
@@ -17,10 +16,6 @@ var paused = false
 @onready var fade_rect: ColorRect = $FadeRect
 
 func _ready():
-	Global.current_hour = 7
-	Global.current_minute = 0
-	Global.current_day = 1
-	morning = true
 	update_labels()
 	update_time_indicator()
 	fade_rect.visible = false
@@ -39,15 +34,15 @@ func _process(delta):
 			Global.current_hour += 1
 
 			# Morning ends at 12:00 PM
-			if morning and Global.current_hour == 12 and Global.current_minute == 0:
-				morning = false
+			if Global.morning and Global.current_hour == 12 and Global.current_minute == 0:
+				Global.morning = false
 				update_time_indicator()
 
 			if Global.current_hour == 18 and Global.current_minute == 0:
 				update_time_indicator()
 
 			# Reset hour after midnight (12 AM)
-			if not morning and Global.current_hour == 24 and Global.current_minute == 0:
+			if not Global.morning and Global.current_hour == 24 and Global.current_minute == 0:
 				Global.current_hour = 0
 				fade_to_next_day()
 				return
@@ -69,7 +64,7 @@ func update_labels():
 	day_label.text = "Day %d" % Global.current_day
 
 func update_time_indicator():
-	if morning:
+	if Global.morning:
 		time_indicator.texture = morning_texture
 	elif Global.current_hour < 18:
 		time_indicator.texture = afternoon_texture
@@ -99,7 +94,7 @@ func _fade_in_new_day():
 	Global.current_day += 1
 	Global.current_hour = 7
 	Global.current_minute = 0
-	morning = true
+	Global.morning = true
 	update_labels()
 	update_time_indicator()
 	day_label.text = "Day: %d" % Global.current_day
