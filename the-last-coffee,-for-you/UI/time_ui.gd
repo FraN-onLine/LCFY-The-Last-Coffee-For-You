@@ -101,6 +101,7 @@ func _fade_in_new_day():
 	var tween = create_tween()
 	tween.tween_property(fade_rect, "color", Color(0, 0, 0, 0), 1.0)
 	tween.tween_callback(Callable(self, "_end_fade"))
+	print("New day started: Day %d" % Global.current_day)
 
 func _end_fade():
 	fade_rect.visible = false

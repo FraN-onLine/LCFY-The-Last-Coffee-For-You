@@ -19,12 +19,7 @@ var last_dir := Vector2i.DOWN
 # ----------------------------
 # STATE
 # ----------------------------
-var interacted_today := false
-var gifted_today := false
-var liked_giftcount := 0
-var met := false
-var available_today := true
-var current_location := "room"
+
 
 # ----------------------------
 # PORTRAITS
@@ -54,7 +49,7 @@ func _ready():
 	# Grid-safe spawn
 	mover.setup(global_position)
 	mover.snap_owner_to_grid(self)
-	TileOccupancy.occupy(current_location, mover.current_tile, self)
+	TileOccupancy.occupy(npc_data.current_location, mover.current_tile, self)
 
 	set_daily_schedule()
 	play_idle_animation()
@@ -70,8 +65,8 @@ func new_day():
 	set_daily_schedule()
 
 func reset_interaction():
-	interacted_today = false
-	gifted_today = false
+	npc_data.interacted_today = false
+	npc_data.gifted_today = false
 
 # ----------------------------
 # SCHEDULING
@@ -79,27 +74,27 @@ func reset_interaction():
 func set_daily_schedule():
 	current_path.clear()
 	path_index = 0
-	available_today = false
+	npc_data.available_today = false
 
 	for schedule in npc_data.schedules:
 		if not is_schedule_active(schedule):
 			continue
 
 		# Move NPC cleanly to schedule start
-		TileOccupancy.vacate(current_location, mover.current_tile)
-		current_location = schedule.location
+		TileOccupancy.vacate(npc_data.current_location, mover.current_tile)
+		npc_data.current_location = schedule.location
 		mover.current_tile = schedule.from_tile
 		mover.snap_owner_to_grid(self)
-		TileOccupancy.occupy(current_location, mover.current_tile, self)
+		TileOccupancy.occupy(npc_data.current_location, mover.current_tile, self)
 
 		current_path = Pathfind.find_path(
 			schedule.from_tile,
 			schedule.to_tile,
-			current_location,
+			npc_data.current_location,
 			collision_tilemap
 		)
 
-		available_today = true
+		npc_data.available_today = true
 		return
 
 func is_schedule_active(schedule: NPCSchedule) -> bool:
@@ -142,7 +137,7 @@ func _physics_process(delta):
 		path_index += 1
 		return
 
-	if mover.try_move(dir, self, can_move_to_tile, current_location):
+	if mover.try_move(dir, self, can_move_to_tile, npc_data.current_location):
 		last_dir = dir
 		update_walk_animation()
 
@@ -187,8 +182,17 @@ func face_player(player):
 # INTERACTION LOGIC
 # ----------------------------
 func interact_with_npc():
-	# Gift first
-	if not gifted_today:
+	# Meet > Gift > Interact first
+	if not npc_data.met and npc_data.has_first_meet_dialogue:
+		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, "first_meet")
+		await get_tree().process_frame
+		get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
+
+		Global.is_paused = true
+		npc_data.met = true
+		return
+
+	if not npc_data.gifted_today:
 		var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
 		if inv_ui:
 			var inv = inv_ui.inv
@@ -198,7 +202,7 @@ func interact_with_npc():
 				handle_gift(slot.item, inv, slot_index, inv_ui)
 				return
 
-	if not interacted_today:
+	if not npc_data.interacted_today:
 		var key := "day" + str(Global.current_day)
 		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, key)
 		await get_tree().process_frame
@@ -206,8 +210,8 @@ func interact_with_npc():
 		
 
 		Global.is_paused = true
-		interacted_today = true
-		met = true
+		npc_data.interacted_today = true
+		npc_data.met = true
 
 func handle_gift(item, inv, slot_index, inv_ui):
 	var reaction_key := "neutral"
@@ -217,8 +221,8 @@ func handle_gift(item, inv, slot_index, inv_ui):
 		reaction_key = "liked"
 		npc_data.friendship += 10
 		portrait = joyous_portrait
-		liked_giftcount += 1
-		if liked_giftcount == 3:
+		npc_data.liked_giftcount += 1
+		if npc_data.liked_giftcount == 3:
 			reaction_key = "liked_gifted_thrice"
 	elif npc_data.hated_items.has(item):
 		reaction_key = "hated"
@@ -234,7 +238,7 @@ func handle_gift(item, inv, slot_index, inv_ui):
 	get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(portrait)
 
 	Global.is_paused = true
-	gifted_today = true
+	npc_data.gifted_today = true
 
 # ----------------------------
 # DIALOGUE END
