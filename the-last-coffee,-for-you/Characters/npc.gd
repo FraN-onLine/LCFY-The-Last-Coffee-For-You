@@ -5,6 +5,7 @@ extends CharacterBody2D
 # ----------------------------
 @export var npc_data: NPCData
 @onready var collision_tilemap: TileMapLayer = get_tree().get_first_node_in_group("collision_tilemap")
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 # ----------------------------
 # GRID MOVEMENT
@@ -28,27 +29,29 @@ var current_location := "room"
 # ----------------------------
 # PORTRAITS
 # ----------------------------
-var normal_portrait = preload("res://Assets/Characters/AIleen/Aileen-Normal.png")
-var angry_portrait = preload("res://Assets/Characters/AIleen/Aileen-Angry.png")
-var joyous_portrait = preload("res://Assets/Characters/AIleen/Aileen-Joyous.png")
-var worried_portrait = preload("res://Assets/Characters/AIleen/Aileen-Worried.png")
-var sad_portrait = preload("res://Assets/Characters/AIleen/Aileen-Sad.png")
+var normal_portrait: Texture2D
+var angry_portrait: Texture2D
+var joyous_portrait: Texture2D
+var worried_portrait: Texture2D
+var sad_portrait: Texture2D
 
 # ----------------------------
 # READY
 # ----------------------------
 func _ready():
+	# Portraits from data
 	normal_portrait = npc_data.normal_portrait
 	angry_portrait = npc_data.angry_portrait
 	joyous_portrait = npc_data.joyous_portrait
 	worried_portrait = npc_data.worried_portrait
 	sad_portrait = npc_data.sad_portrait
-	
+
+	# Grid mover
 	add_child(mover)
 	mover.move_speed = 3.0
 	mover.move_repeat_delay = 0.0
 
-	# Grid-safe initialization
+	# Grid-safe spawn
 	mover.setup(global_position)
 	mover.snap_owner_to_grid(self)
 	TileOccupancy.occupy(current_location, mover.current_tile, self)
@@ -127,14 +130,14 @@ func _physics_process(delta):
 
 	var next_tile := current_path[path_index]
 
-	# Already arrived on this tile
+	# Already arrived
 	if next_tile == mover.current_tile:
 		path_index += 1
 		return
 
 	var dir := next_tile - mover.current_tile
 
-	# Safety: only cardinal movement allowed
+	# Only cardinal movement allowed
 	if abs(dir.x) + abs(dir.y) != 1:
 		path_index += 1
 		return
@@ -184,7 +187,7 @@ func face_player(player):
 # INTERACTION LOGIC
 # ----------------------------
 func interact_with_npc():
-	# Gift handling first
+	# Gift first
 	if not gifted_today:
 		var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
 		if inv_ui:
@@ -199,6 +202,8 @@ func interact_with_npc():
 		var key := "day" + str(Global.current_day)
 		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, key)
 		await get_tree().process_frame
+		get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
+		
 
 		Global.is_paused = true
 		interacted_today = true
@@ -206,7 +211,7 @@ func interact_with_npc():
 
 func handle_gift(item, inv, slot_index, inv_ui):
 	var reaction_key := "neutral"
-	var portrait = normal_portrait
+	var portrait := normal_portrait
 
 	if npc_data.loved_items.has(item):
 		reaction_key = "liked"
@@ -225,6 +230,7 @@ func handle_gift(item, inv, slot_index, inv_ui):
 	inv_ui.update_slots()
 
 	DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, reaction_key)
+	await get_tree().process_frame
 	get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(portrait)
 
 	Global.is_paused = true
@@ -238,7 +244,7 @@ func _on_dialogue_ended(_res):
 	play_idle_animation()
 
 # ----------------------------
-# ANIMATION
+# ANIMATION (FIXED)
 # ----------------------------
 func update_walk_animation():
 	if abs(last_dir.x) > abs(last_dir.y):
@@ -252,6 +258,7 @@ func play_idle_animation():
 	else:
 		play_animation("idle-down" if last_dir.y > 0 else "idle-up")
 
-func play_animation(anim_type: String):
-	if npc_data.animations.has(anim_type):
-		$AnimatedSprite2D.play(npc_data.animations[anim_type])
+func play_animation(anim_name: String):
+	if sprite.sprite_frames and sprite.sprite_frames.has_animation(anim_name):
+		if sprite.animation != anim_name:
+			sprite.play(anim_name)
