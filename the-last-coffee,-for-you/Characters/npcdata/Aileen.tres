@@ -26,9 +26,10 @@ metadata/_custom_type_script = "uid://bd81cgfnbrhvm"
 
 [resource]
 script = ExtResource("2_gac0w")
-name = "AIleen"
+name = "Aileen"
 friendship = 0
 schedules = Array[ExtResource("6_nhndy")]([SubResource("Resource_7kw0v")])
+current_location = "room"
 has_first_meet_dialogue = false
 cutscenes = Array[ExtResource("1_7kw0v")]([])
 loved_items = Array[ExtResource("1_ucr2a")]([ExtResource("3_rs6ud")])

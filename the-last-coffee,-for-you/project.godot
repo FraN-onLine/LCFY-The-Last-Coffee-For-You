@@ -22,6 +22,7 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 TileOccupancy="*res://Global/TileOccupancy.gd"
 Pathfind="*res://Global/GridPathFinder.gd"
 MapTransitionManager="*res://Global/MapTransition.gd"
+NpcState="*res://Global/NpcState.gd"
 
 [dialogue_manager]
 

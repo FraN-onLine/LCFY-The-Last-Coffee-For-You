@@ -47,9 +47,10 @@ func _ready():
 	mover.move_repeat_delay = 0.0
 
 	# Grid-safe spawn
+	NpcState.current_location[npc_data.name] = npc_data.current_location
 	mover.setup(global_position)
 	mover.snap_owner_to_grid(self)
-	TileOccupancy.occupy(npc_data.current_location, mover.current_tile, self)
+	TileOccupancy.occupy(NpcState.current_location[npc_data.name], mover.current_tile, self)
 
 	set_daily_schedule()
 	play_idle_animation()
@@ -65,8 +66,8 @@ func new_day():
 	set_daily_schedule()
 
 func reset_interaction():
-	npc_data.interacted_today = false
-	npc_data.gifted_today = false
+	NpcState.interacted_today[npc_data.name] = false
+	NpcState.gifted_today[npc_data.name] = false
 
 # ----------------------------
 # SCHEDULING
@@ -74,27 +75,27 @@ func reset_interaction():
 func set_daily_schedule():
 	current_path.clear()
 	path_index = 0
-	npc_data.available_today = false
+	NpcState.available_today[npc_data.name] = false
 
 	for schedule in npc_data.schedules:
 		if not is_schedule_active(schedule):
 			continue
 
 		# Move NPC cleanly to schedule start
-		TileOccupancy.vacate(npc_data.current_location, mover.current_tile)
-		npc_data.current_location = schedule.location
+		TileOccupancy.vacate(NpcState.current_location[npc_data.name], mover.current_tile)
+		NpcState.current_location[npc_data.name] = schedule.location
 		mover.current_tile = schedule.from_tile
 		mover.snap_owner_to_grid(self)
-		TileOccupancy.occupy(npc_data.current_location, mover.current_tile, self)
+		TileOccupancy.occupy(NpcState.current_location[npc_data.name], mover.current_tile, self)
 
 		current_path = Pathfind.find_path(
 			schedule.from_tile,
 			schedule.to_tile,
-			npc_data.current_location,
+			NpcState.current_location[npc_data.name],
 			collision_tilemap
 		)
 
-		npc_data.available_today = true
+		NpcState.available_today[npc_data.name] = true
 		return
 
 func is_schedule_active(schedule: NPCSchedule) -> bool:
@@ -137,7 +138,7 @@ func _physics_process(delta):
 		path_index += 1
 		return
 
-	if mover.try_move(dir, self, can_move_to_tile, npc_data.current_location):
+	if mover.try_move(dir, self, can_move_to_tile, NpcState.current_location[npc_data.name]):
 		last_dir = dir
 		update_walk_animation()
 
@@ -183,18 +184,18 @@ func face_player(player):
 # ----------------------------
 func interact_with_npc():
 	# Meet > Gift > Interact first
-	if not npc_data.met and npc_data.has_first_meet_dialogue:
+	if not NpcState.met[npc_data.name] and npc_data.has_first_meet_dialogue:
 		Global.is_paused = true
 		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, "first_meet")
 		await get_tree().process_frame
 		get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
 
 		Global.is_paused = true
-		npc_data.interacted_today = true
-		npc_data.met = true
+		NpcState.interacted_today[npc_data.name] = true
+		NpcState.met[npc_data.name] = true
 		return
 
-	if not npc_data.gifted_today:
+	if not NpcState.gifted_today[npc_data.name]:
 		var inv_ui = get_tree().get_first_node_in_group("inventory_ui")
 		if inv_ui:
 			var inv = inv_ui.inv
@@ -204,14 +205,14 @@ func interact_with_npc():
 				handle_gift(slot.item, inv, slot_index, inv_ui)
 				return
 
-	if not npc_data.interacted_today:
+	if not NpcState.interacted_today[npc_data.name]:
 		Global.is_paused = true
 		var key := "day" + str(Global.current_day)
 		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, key)
 		await get_tree().process_frame
 		get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
-		npc_data.interacted_today = true
-		npc_data.met = true
+		NpcState.interacted_today[npc_data.name] = true
+		NpcState.met[npc_data.name] = true
 
 func handle_gift(item, inv, slot_index, inv_ui):
 	var reaction_key := "neutral"
@@ -221,8 +222,8 @@ func handle_gift(item, inv, slot_index, inv_ui):
 		reaction_key = "liked"
 		npc_data.friendship += 10
 		portrait = joyous_portrait
-		npc_data.liked_giftcount += 1
-		if npc_data.liked_giftcount == 3:
+		NpcState.liked_giftcount[npc_data.name] += 1
+		if NpcState.liked_giftcount[npc_data.name] == 3:
 			reaction_key = "liked_gifted_thrice"
 	elif npc_data.hated_items.has(item):
 		reaction_key = "hated"
@@ -238,7 +239,7 @@ func handle_gift(item, inv, slot_index, inv_ui):
 	get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(portrait)
 
 	Global.is_paused = true
-	npc_data.gifted_today = true
+	NpcState.gifted_today[npc_data.name] = true
 
 # ----------------------------
 # DIALOGUE END

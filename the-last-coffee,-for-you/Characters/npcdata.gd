@@ -6,12 +6,7 @@ class_name NPCData
 
 # -------- SCHEDULES --------
 @export var schedules: Array[NPCSchedule] = []
-var interacted_today := false
-var gifted_today := false
-var liked_giftcount := 0
-var met := false
-var available_today := true
-var current_location := "room"
+@export var current_location = "room"
 @export var has_first_meet_dialogue: bool = false
 
 # -------- CUTSCENES --------
