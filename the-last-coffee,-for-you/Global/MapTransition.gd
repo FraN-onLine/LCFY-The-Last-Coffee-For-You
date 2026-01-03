@@ -30,9 +30,9 @@ func change_map(map_name: String, spawn_id: int, player):
 		print("snapped")
 
 func place_player(player: Node2D):
-	var spawn_parent = get_tree().current_scene.get_node_or_null("SpawnPoints")
+	var spawn_parent = get_tree().current_scene.get_node_or_null("spawnpoints")
 	if not spawn_parent:
-		push_error("SpawnPoints missing in map")
+		push_error("spawnpoints missing in map")
 		return
 
 	var spawn = spawn_parent.get_node_or_null("Spawn_%d" % pending_spawn_id)

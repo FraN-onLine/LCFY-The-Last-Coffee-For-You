@@ -13,6 +13,7 @@ script = ExtResource("4_5p1e2")
 name = "Gabhie"
 friendship = 600
 schedules = Array[ExtResource("3_q4uwk")]([])
+has_first_meet_dialogue = true
 cutscenes = Array[ExtResource("1_5ua1t")]([])
 loved_items = Array[ExtResource("2_03tfu")]([])
 hated_items = Array[ExtResource("2_03tfu")]([])

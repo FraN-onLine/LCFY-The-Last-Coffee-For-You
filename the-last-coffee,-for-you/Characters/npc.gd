@@ -184,11 +184,13 @@ func face_player(player):
 func interact_with_npc():
 	# Meet > Gift > Interact first
 	if not npc_data.met and npc_data.has_first_meet_dialogue:
+		Global.is_paused = true
 		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, "first_meet")
 		await get_tree().process_frame
 		get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
 
 		Global.is_paused = true
+		npc_data.interacted_today = true
 		npc_data.met = true
 		return
 
@@ -203,13 +205,11 @@ func interact_with_npc():
 				return
 
 	if not npc_data.interacted_today:
+		Global.is_paused = true
 		var key := "day" + str(Global.current_day)
 		DialogueManager.show_dialogue_balloon(npc_data.dialogue_path, key)
 		await get_tree().process_frame
 		get_tree().get_first_node_in_group("dialogue_balloon").change_portrait(normal_portrait)
-		
-
-		Global.is_paused = true
 		npc_data.interacted_today = true
 		npc_data.met = true
 
@@ -245,6 +245,7 @@ func handle_gift(item, inv, slot_index, inv_ui):
 # ----------------------------
 func _on_dialogue_ended(_res):
 	Global.is_paused = false
+	
 	play_idle_animation()
 
 # ----------------------------
