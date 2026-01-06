@@ -20,7 +20,7 @@ This is a branching, open-ended experience about fleeting connections, unspoken 
 
 > One day, you'll get tired of the coffee,  
 > Tired of the monotony of the same old story.  
-> A latte with some toffee, a fresh cold brew —  
+> A latte with some toffee, a fresh cold brew coffee—  
 > The same flavors you once called "mine,"  
 > a cup of coffee some time?  
 >   

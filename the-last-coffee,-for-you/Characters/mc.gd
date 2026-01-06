@@ -23,6 +23,28 @@ var animation := "idle"
 var current_location = "room"
 
 # ----------------------------
+# INVENTORY
+# ----------------------------
+const ContainerUI = preload("res://UI/container_ui.tscn")
+
+var open_container_ui: Control = null
+
+func open_container(container_id, container_inventory):
+	# Prevent duplicate UI
+	if open_container_ui and is_instance_valid(open_container_ui):
+		return
+
+	Global.is_paused = true
+
+	var ui = ContainerUI.instantiate()
+	ui.container_inventory = container_inventory
+	var canvas_layer = get_tree().current_scene.get_node("UI") # Adjust if needed
+	canvas_layer.add_child(ui)
+
+
+
+
+# ----------------------------
 # READY
 # ----------------------------
 func _ready():
@@ -112,17 +134,50 @@ func _unhandled_input(event):
 		handle_tile_tap(event.position)
 
 func handle_tile_tap(screen_pos: Vector2):
-	print("tap")
 	var world_pos = get_global_mouse_position()
 	var tapped_tile: Vector2i = mover.world_to_tile(world_pos)
-	print("tapped_tile:", tapped_tile)
 
-	# Check if an NPC is on that tile
-	var npc = TileOccupancy.get_occupant(current_location, tapped_tile)
-	print("occupant:", npc)
-	if npc and npc.has_method("interact_from"):
-		print("int")
-		npc.interact_from(self)
+	# --- NPC / entity interaction first ---
+	var occupant = TileOccupancy.get_occupant(current_location, tapped_tile)
+	if occupant and occupant.has_method("interact_from"):
+		occupant.interact_from(self)
+		return
+
+	# --- Container tile interaction ---
+	try_open_container_tile(tapped_tile)
+
+func try_open_container_tile(tile: Vector2i):
+	if Global.is_paused:
+		return
+
+	if not is_adjacent_to_tile(tile):
+		return
+
+	var tilemap: TileMapLayer = collision_tilemap
+	if not tilemap:
+		return
+
+	var data = tilemap.get_cell_tile_data(tile)
+	if not data:
+		return
+
+	if not data.get_custom_data("container"):
+		return
+	if not data.get_custom_data("container_inventory"):
+		return
+
+	var container_id = data.get_custom_data("container_id")
+	var container_inventory = data.get_custom_data("container_inventory")
+	if container_id == null:
+		push_error("Container tile missing container_id")
+		return
+
+	open_container(container_id, container_inventory)
+
+func is_adjacent_to_tile(tile: Vector2i) -> bool:
+	var diff := tile - mover.current_tile
+	return abs(diff.x) + abs(diff.y) == 1
+
 
 
 func dir_to_anim(dir: Vector2i) -> String:

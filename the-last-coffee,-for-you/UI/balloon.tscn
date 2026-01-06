@@ -200,7 +200,7 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Dialogue..."
 
 [node name="CharacterPortrait" type="TextureRect" parent="."]
-anchors_preset = -1
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
