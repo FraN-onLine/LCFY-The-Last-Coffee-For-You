@@ -151,6 +151,7 @@ func try_open_container_tile(tile: Vector2i):
 		return
 
 	if not is_adjacent_to_tile(tile):
+		print("not adj")
 		return
 
 	var tilemap: TileMapLayer = collision_tilemap
@@ -162,8 +163,10 @@ func try_open_container_tile(tile: Vector2i):
 		return
 
 	if not data.get_custom_data("container"):
+		print("error 1")
 		return
 	if not data.get_custom_data("container_inventory"):
+		print("error 2")
 		return
 
 	var container_id = data.get_custom_data("container_id")
@@ -171,7 +174,7 @@ func try_open_container_tile(tile: Vector2i):
 	if container_id == null:
 		push_error("Container tile missing container_id")
 		return
-
+	print("has deets")
 	open_container(container_id, container_inventory)
 
 func is_adjacent_to_tile(tile: Vector2i) -> bool:

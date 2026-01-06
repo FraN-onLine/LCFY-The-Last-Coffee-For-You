@@ -122,6 +122,7 @@ func _input(event):
 
 func close_ui():
 	get_tree().paused = false
+	Global.is_paused = false
 	emit_signal("ui_closed")
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
