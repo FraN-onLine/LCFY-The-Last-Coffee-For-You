@@ -3,8 +3,15 @@ Aileen: Good Morning! {{Global.player_name}}, I was supposed to tend to the Coff
 - I'll go check the Coffee Shop in your Stead
 	Aileen: If you insist, It should be the last of your worries.. since..
 	Aileen: Nevermind, I appreciate it regardless
+	Aileen: Take care, I'll still see you around right?
 - Don't worry, you should go rest. 
 	Aileen: I don't think i should be the one resting..., We'll stay here together?
+	Aileen: But, we have all the time in the world, right?
+	- Haha, yes mom.....
+		Aileen: You don't have to avoid that fact for me, Spend your day how you want
+	- I... Well, I'm sorry
+		Aileen: Make the most out of your life. Make the choices you know you won't regret right?
+		
 => END
 
 ~ day2
@@ -21,7 +28,19 @@ Aileen: Please, Get well soon
 => END
 
 ~ day3
-Aileen: This is day 3
+Aileen: {Global.player_parent_relation}, You know mother loves you right?
+Aileen: How many times have i told you that i love you?
+
+- It's more than i could ever ask for, thanks mom!
+	Aileen: Really? I feel like i didn't say it enough
+- The fact that you're here, fighting spite everything..
+	- Really shows that you love mom
+		Aileen: ......i love you, {Global.player_parent_relation}.
+
+
+
+
+
 ~ AdRead
 Aileen: And Right [b]Now[/b] [wave] You can save 50 POUNDS Per Person [wave]
 Aileen: [tornado] That's 200 Pounds off for a Family of Four [/tornado]
@@ -40,8 +59,9 @@ Aileen: Just how it used to be~
 => END
 
 ~ neutral
-Aileen: Oh lovely, thanks for this
+Aileen: Oh lovely, thanks for this!
 Aileen: might serve as a good momento
+Aileen: You're so thoughtful... hmm... 
 => END
 
 ~ hated

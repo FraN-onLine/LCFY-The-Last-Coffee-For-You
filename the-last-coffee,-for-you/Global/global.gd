@@ -1,6 +1,7 @@
 extends Node
 
 var player_name: String = "Milieu"
+var parent_relation: String = "Son"
 var current_day: int = 1           # Day number (1-28, or more)
 var current_hour: int = 7          # Current hour (0-23)
 var current_minute: int = 0        # Current minute (0-59)
