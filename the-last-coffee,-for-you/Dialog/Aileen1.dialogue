@@ -9,16 +9,16 @@ Aileen: Good Morning! {{Global.player_name}}, I was supposed to tend to the Coff
 
 ~ day2
 
-	Aileen: Oh Good Morning [wave]{{Global.player_name}}[wave]
-	Aileen: What's your plans for today? [wait= 1] Maybe checking in with your brother will be a good idea?
+Aileen: Oh Good Morning [wave]{{Global.player_name}}[wave]
+Aileen: What's your plans for today? [wait= 1] Maybe checking in with your brother will be a good idea?
 
-	- I think i'll get some fresh air
-		Aileen: Oh alright then...
-	- I'll go check up on him
-		Aileen: Yeah he's been shut in for a while.. i hope he is alright..
-	- Nothing beats a Jet2 Holiday =>< AdRead
-	Aileen: Please, Get well soon
-	=> END
+- I think i'll get some fresh air
+	Aileen: Oh alright then...
+- I'll go check up on him
+	Aileen: Yeah he's been shut in for a while.. i hope he is alright..
+- Nothing beats a Jet2 Holiday =>< AdRead
+Aileen: Please, Get well soon
+=> END
 
 ~ day3
 Aileen: This is day 3
