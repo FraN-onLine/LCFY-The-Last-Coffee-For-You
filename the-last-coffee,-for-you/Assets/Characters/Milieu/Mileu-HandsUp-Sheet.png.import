@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2o0tttn5grr0"
-path="res://.godot/imported/MC-Sheet.png-081b916c6d69f0fac4be18bb39253463.ctex"
+uid="uid://c1k8rof308o33"
+path="res://.godot/imported/Mileu-HandsUp-Sheet.png-18c0176e1231b3220084489fbdac1e40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Characters/Milieu/MC-Sheet.png"
-dest_files=["res://.godot/imported/MC-Sheet.png-081b916c6d69f0fac4be18bb39253463.ctex"]
+source_file="res://Assets/Characters/Milieu/Mileu-HandsUp-Sheet.png"
+dest_files=["res://.godot/imported/Mileu-HandsUp-Sheet.png-18c0176e1231b3220084489fbdac1e40.ctex"]
 
 [params]
 
