@@ -13,6 +13,18 @@ that your final moment together has already passed?
 
 This is a branching, open-ended experience about fleeting connections, unspoken words, and the warmth (and bitterness) of coffee shared in silence.  
 
+# Why i made LCFY  
+
+As a person, you have strayed away and had your last conversation with people you know, without even knowing.  
+or maybe you'd like to believe you already had that last conversation with a certain someone?  
+
+New Direction: As a person, i also see the power to make a new interaction from final interactions long passed,  
+there's also people i thought i'd never be able to talk to again but had the power to, and weirdly, it was them again.  
+the inspiration, the stranger who showed me the world. he, the foundation. and maybe that was the last, but i'd like to believe,  
+we'd have one more, to share the cup of coffee he brewed for me...  
+
+afterall, he was the one... who made me fall inlove with coffee...  
+
 ---
 
 ## 🎵 *The Coffee I Brewed for You*  
