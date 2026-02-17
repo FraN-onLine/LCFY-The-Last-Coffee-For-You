@@ -34,6 +34,20 @@ because at that time, when you still know them, you really thought they will las
 And it's sometimes for the best that your roads have already went past the intersection.  
 
 thanks for happening, i learnt a lot  
+
+# The truth about LCFY
+
+And so, the third time. i had this mindset it wont last and it interfered a lot,  
+truthfully, yes it won't  
+
+and should that stop me?, No.  
+
+Because the last coffee, Our last coffee shall be enjoyed hot. not when it turns cold.  
+people are foolish to think things will last, but i envy their belief.  
+i'd want to believe in forever too.... one day  
+someone will show me, and blind me that... yes, this will last. be it a friend, partner or a promise.  
+
+fool me to never expect, the last coffee from you.
 ---
 
 ## 🎵 *The Coffee I Brewed for You*  
@@ -56,9 +70,6 @@ thanks for happening, i learnt a lot
 ---
 
 ### 🎮 Status
-- Branching narrative framework ✅  
-- Core theme brewing ☕  
-- Emotional damage in progress 💔  
 
 ---
 
