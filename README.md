@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/Titlecard.png" alt="The Last Coffee, For You" width="600">
+  <img src="assets/Title.png" alt="The Last Coffee, For You" width="600">
 </p>
 
 # ☕ The Last Coffee, For You  
