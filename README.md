@@ -25,6 +25,15 @@ we'd have one more, to share the cup of coffee he brewed for me...
 
 afterall, he was the one... who made me fall inlove with coffee...  
 
+# What LCFY Aims to Tell  
+
+Simple, I'm a yearner, i long for connections, but people are temporary... impactful but temporary  
+and i want to revisit these types of people, i want to highlight these fleeting people in life that makes a difference  
+
+because at that time, when you still know them, you really thought they will last.
+And it's sometimes for the best that your roads have already went past the intersection.  
+
+thanks for happening, i learnt a lot  
 ---
 
 ## 🎵 *The Coffee I Brewed for You*  
