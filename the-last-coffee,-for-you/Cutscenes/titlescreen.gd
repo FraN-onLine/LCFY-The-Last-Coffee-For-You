@@ -27,4 +27,4 @@ func _on_start_pressed():
 	# Wait until finished
 	await tween.finished
 
-	get_tree().change_scene_to_file("res://Areas/mainroom.tscn")
+	get_tree().change_scene_to_file("res://Cutscenes/cutscene.tscn")
