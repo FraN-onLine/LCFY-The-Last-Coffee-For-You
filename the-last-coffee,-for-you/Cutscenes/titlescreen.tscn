@@ -69,7 +69,7 @@ position = Vector2(640, 360)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_831ew")
 autoplay = "default"
-frame_progress = 0.991285
+frame_progress = 0.590199
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(640, 358.5)
