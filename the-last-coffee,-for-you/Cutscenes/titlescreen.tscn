@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://cap6bc771e0wy"]
+
+[ext_resource type="Texture2D" uid="uid://dn6dos2nma2du" path="res://Assets/Cutscenes/title/Titlescreen1.png" id="1_uvwmq"]
+[ext_resource type="Texture2D" uid="uid://byqmgfpssphvu" path="res://Assets/Cutscenes/title/Titlescreen2.png" id="2_ecuvd"]
+[ext_resource type="Texture2D" uid="uid://duf5bp1qybyat" path="res://Assets/Cutscenes/title/Titlescreen3.png" id="3_krx1d"]
+[ext_resource type="Texture2D" uid="uid://b55auqdx1tlpr" path="res://Assets/Cutscenes/title/title.png" id="4_hul2w"]
+[ext_resource type="FontFile" uid="uid://dhr8b6baf3jum" path="res://Assets/UI/fusion-pixel-12px-monospaced-kr-latin-400-normal.ttf" id="5_bgy3u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_831ew"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uvwmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ecuvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_krx1d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_i0kdj"]
+resource_name = "new_animation"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 358.5), Vector2(640, 363.5)]
+}
+
+[sub_resource type="Animation" id="Animation_k3ihy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 358.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xauqw"]
+_data = {
+&"RESET": SubResource("Animation_k3ihy"),
+&"new_animation": SubResource("Animation_i0kdj")
+}
+
+[node name="Titlescreen" type="Node2D"]
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_831ew")
+autoplay = "default"
+frame_progress = 0.138981
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(640, 358.5)
+scale = Vector2(4, 4.01667)
+texture = ExtResource("4_hul2w")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 857.0
+offset_top = 421.0
+offset_right = 1025.0
+offset_bottom = 494.0
+theme_override_fonts/font = ExtResource("5_bgy3u")
+theme_override_font_sizes/font_size = 64
+text = "START"
+flat = true
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 871.0
+offset_top = 497.0
+offset_right = 1007.0
+offset_bottom = 570.0
+theme_override_fonts/font = ExtResource("5_bgy3u")
+theme_override_font_sizes/font_size = 64
+text = "QUIT"
+flat = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xauqw")
+}
