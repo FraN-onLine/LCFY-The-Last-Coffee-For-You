@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Last Coffee, For You"
-run/main_scene="uid://ltxkusd3vexo"
+run/main_scene="uid://cap6bc771e0wy"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 

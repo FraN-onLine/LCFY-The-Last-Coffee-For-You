@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cap6bc771e0wy"]
+[gd_scene load_steps=11 format=3 uid="uid://cap6bc771e0wy"]
 
+[ext_resource type="Script" uid="uid://cvud5t844ha7n" path="res://Cutscenes/titlescreen.gd" id="1_ecuvd"]
 [ext_resource type="Texture2D" uid="uid://dn6dos2nma2du" path="res://Assets/Cutscenes/title/Titlescreen1.png" id="1_uvwmq"]
 [ext_resource type="Texture2D" uid="uid://byqmgfpssphvu" path="res://Assets/Cutscenes/title/Titlescreen2.png" id="2_ecuvd"]
 [ext_resource type="Texture2D" uid="uid://duf5bp1qybyat" path="res://Assets/Cutscenes/title/Titlescreen3.png" id="3_krx1d"]
@@ -61,13 +62,14 @@ _data = {
 }
 
 [node name="Titlescreen" type="Node2D"]
+script = ExtResource("1_ecuvd")
 
 [node name="Background" type="AnimatedSprite2D" parent="."]
 position = Vector2(640, 360)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_831ew")
 autoplay = "default"
-frame_progress = 0.138981
+frame_progress = 0.158077
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(640, 358.5)
@@ -98,3 +100,4 @@ flat = true
 libraries = {
 &"": SubResource("AnimationLibrary_xauqw")
 }
+autoplay = "new_animation"
