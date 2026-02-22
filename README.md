@@ -45,10 +45,19 @@ thanks for happening, i learnt a lot
 
 # The truth about LCFY
 
+To: Lovefool  
+
 And so, for the third time. i had this mindset whatever i had won't last and it interfered a lot,  
 truthfully, yes it won't  
 
 and should that stop me?, No.  
+i wanted to make myself believe. that everything will last. I can't fool myself if others refuse to stay won't they?  
+and i see myself begging over and over, please stay.  
+please stay.  
+stay......  
+
+til you expect no one to, til grief numbs you  
+til parting is normal. where even letting things down slowly doesn't work anymore  
 
 Because the last coffee, Our last coffee shall be enjoyed hot. not when it turns cold.  
 people are foolish to think things will last, but i envy their belief.  
