@@ -15,6 +15,8 @@ This is a branching, open-ended experience about fleeting connections, unspoken 
 
 # Why i made LCFY  
 
+To: Mr. Stranger, Loving and Patient  
+
 As a person, you have strayed away and had your last conversation with people you know, without even knowing.  
 or maybe you'd like to believe you already had that last conversation with a certain someone?  
 
@@ -25,7 +27,13 @@ we'd have one more, to share the cup of coffee he brewed for me...
 
 afterall, he was the one... who made me fall inlove with coffee...  
 
+and to that stranger, thank you for letting me down slowly,  
+fuck. thank you so much, for letting me stay after, for being kind  
+and letting time drift us apart...., thank you for being the only one who i can say, truly loved me.  
+
 # What LCFY Aims to Tell  
+
+To: Bygone days  
 
 Simple, I'm a yearner, i long for connections, but people are temporary... impactful but temporary  
 and i want to revisit these types of people, i want to highlight these fleeting people in life that makes a difference  
