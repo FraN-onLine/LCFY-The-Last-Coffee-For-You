@@ -37,7 +37,7 @@ thanks for happening, i learnt a lot
 
 # The truth about LCFY
 
-And so, the third time. i had this mindset it wont last and it interfered a lot,  
+And so, for the third time. i had this mindset whatever i had won't last and it interfered a lot,  
 truthfully, yes it won't  
 
 and should that stop me?, No.  
@@ -47,7 +47,9 @@ people are foolish to think things will last, but i envy their belief.
 i'd want to believe in forever too.... one day  
 someone will show me, and blind me that... yes, this will last. be it a friend, partner or a promise.  
 
-fool me to never expect, the last coffee from you.
+"fool me to never expect—the last coffee from you."  
+"fool me, not by lies you know you're lying about, but lies you actually believe in"  
+
 ---
 
 ## 🎵 *The Coffee I Brewed for You*  
