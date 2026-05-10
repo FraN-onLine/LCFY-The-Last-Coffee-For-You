@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://8437no1d02s6"]
+[gd_scene format=3 uid="uid://8437no1d02s6"]
 
 [ext_resource type="Script" uid="uid://caokpoqj7nvt3" path="res://Characters/mc.gd" id="1_5bpqy"]
 [ext_resource type="Resource" uid="uid://bh5281gv44is3" path="res://Inventory/playerinventory.tres" id="2_63cag"]
@@ -396,25 +396,26 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ib2cn"]
 size = Vector2(10, 10)
 
-[node name="MC" type="CharacterBody2D" groups=["player"]]
+[node name="MC" type="CharacterBody2D" unique_id=888769777 groups=["player"]]
 script = ExtResource("1_5bpqy")
 inv = ExtResource("2_63cag")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251168501]
 z_index = 2
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_nlhd7")
 animation = &"walk-up-hold"
 frame_progress = 0.435203
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+[node name="PlayerCollision" type="CollisionShape2D" parent="." unique_id=2019459374]
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_ib2cn")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2103343348]
 zoom = Vector2(3, 3)
 
-[node name="HeldItemSprite" type="Sprite2D" parent="."]
+[node name="HeldItemSprite" type="Sprite2D" parent="." unique_id=39966691]
+visible = false
 z_index = 1
 position = Vector2(0, -43)
 scale = Vector2(0.609375, 0.548021)
